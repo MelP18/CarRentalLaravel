@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    color: #000;
+    z-index: 5;
+    box-sizing: border-box;
+    font-family: "font-mono";
+}
