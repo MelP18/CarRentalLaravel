@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +26,12 @@ Route::get('/', function () {
 Route::controller(CarController::class)->middleware('auth')->group(function(){
     Route::get('/car-lists', 'showcarlists')->name('showCarLists');
 });
+Route::controller(CustomerController::class)->middleware('auth')->group(function(){
+    Route::get('/customer-lists', 'showcustomerlists')->name('showCustomerLists');
+    Route::get('/add-Customer', 'addCustomer')->name('addCustomer');
+    Route ::post ('/store-customer',"storecustomer")->name("storecustomer");
+});
+
 
 Route::controller(UserController::class)->prefix('authentification')->group(function(){
     Route::get('/registration', 'signup')->name('signUp');
