@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function category(){
+
         //$id = Auth::user()->id;
         $category = Category::all();
     
@@ -35,3 +36,4 @@ class CategoryController extends Controller
 
     }
 }
+     
