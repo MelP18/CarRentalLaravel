@@ -2,7 +2,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {{--  <link href="{{ asset('css/app.css') }}" rel="stylesheet">  --}}
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <title>CarRental</title>
 </head>
@@ -45,13 +44,17 @@
                 <a href="{{ route('addCustomer') }}">
                     <button type="button" class="btn btn-primary m-5">Add Customer</button>
                 </a>
+
             </div>
         </header>
+
         <main>
             @yield('content')
         </main>
+
     </div>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 </body>
 
 </html>
+

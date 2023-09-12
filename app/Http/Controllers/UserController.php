@@ -76,12 +76,14 @@ class UserController extends Controller
         if(!$user){
             abort(404);
         }
+        //dd($user->id_user);
 
         if(!$request->hasValidSignature()){
             abort(404);
         }
 
         $user->update([
+            /* 'id_user' => $user->id_user, */
             'email_verified_at' => now(),
             'email_verified' => true
         ]);
@@ -107,7 +109,7 @@ class UserController extends Controller
             return redirect()->back()->with('error', 'Email/Mot de Passe invalid');
         }
 
-        return redirect()->route('showCarLists');
+        return redirect()->route('showCustomerLists');
     }
 
 
@@ -178,7 +180,7 @@ class UserController extends Controller
     }
 
 
-    
+
     /*=========+++> CHANGEMENT DE MOT DE PASSE <+++========*/
     public function sendformodifypassword(Request $request, $email){
         $user = User::where('email', $email)->first();
