@@ -23,14 +23,13 @@ Route::get('/', function () {
 });
 
 
-Route::controller(CustomerController::class)->middleware('auth')->group(function(){
-    Route::get('/customer-lists', 'showcustomerlists')->name('showCustomerLists');
-});
+
 
 
 Route::controller(CarController::class)->prefix('car')->group(function(){
     Route::get('/car-lists', 'showcarlists')->name('showCarLists');
 });
+
 Route::controller(CustomerController::class)->middleware('auth')->group(function(){
     Route::get('/customer-lists', 'showcustomerlists')->name('showCustomerLists');
     Route::get('/add-Customer', 'addCustomer')->name('addCustomer');

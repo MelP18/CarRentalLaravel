@@ -7,54 +7,77 @@
 </head>
 
 <body class="bg-blue-950">
-    @if (session('message'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Message success </strong> <br>{{ session('message') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
 
-            </button>
+   
 
-        </div>
-    @endif
-    @if (session('error'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Message success </strong> <br>{{ session('error') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-
-            </button>
-
-        </div>
-    @endif
-    @if ($errors->any())
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li><br />
-                @endforeach
-            </ul>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
-        </div>
-    @endif
     <div class="block w-full h-screen">
+
         <header class="navbar mb-5 bg-primary">
             <div class="header__content ">
-                <div class="header__logo "><a href="#" class="text-dark text-decoration-none">GesCar</a></div>
+                <div class="header__logo ">
+                    <a href="{{ route('showCustomerLists') }}" class="text-dark text-decoration-none">GesCar</a>
+                </div>
             </div>
-            <div class="user">
-                <a href="{{ route('addCustomer') }}">
-                    <button type="button" class="btn btn-primary m-5">Add Customer</button>
-                </a>
-
+            <div class="header__menus">
+                <nav class="header__menu__list">
+                    <li class="header__menu__list__item">
+                        <a href="{{ route('showCustomerLists') }}">Home</a>
+                    </li>
+                    <li class="header__menu__list__item">
+                        <a href="{{ route('showCarLists') }}">Car Management</a>
+                    </li>
+                    <li class="header__menu__list__item">
+                        <a href="#">Rental Management</a>
+                    </li>
+                </nav>
             </div>
+        
         </header>
 
         <main>
+            @if (session('message'))
+
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Message success </strong> <br>{{ session('message') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        
+                    </button>
+        
+                </div>
+    
+            @endif
+    
+            @if (session('error'))
+        
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Message success </strong> <br>{{ session('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    </button>
+                </div>
+        
+            @endif
+        
+            @if ($errors->any())
+        
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li><br />
+                        @endforeach
+                    </ul>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+                </div>
+        
+            @endif
+
+
             @yield('content')
+
         </main>
 
     </div>
+
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 </body>
 
 </html>
-

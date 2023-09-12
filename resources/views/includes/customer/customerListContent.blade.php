@@ -1,4 +1,6 @@
-
+<a href="{{ route('addCustomer') }}" class="btn btn-primary">
+   Add Customer
+</a>
 <table class="table table table-striped table-bordered">
     <thead class="table-dark">
         <tr>
