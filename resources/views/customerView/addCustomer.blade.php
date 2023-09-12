@@ -2,6 +2,6 @@
 
 @section('content')
 
-    @include('includes.Customer.addCustomerContent')
+    @include('includes.customer.addCustomerContent')
     
 @endsection
