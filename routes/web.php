@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CustomerController;
@@ -6,7 +7,7 @@ use App\Http\Controllers\CarController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ModalController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RentalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,4 +83,13 @@ Route::controller(UserController::class)->prefix('authentification')->group(func
     Route::post('/modify-password-send-email', 'sendforverifyemail')->name('sendForVerifyEmail');
     Route::get('/modify-password-modify-password/{email}', 'modifypassword')->name('modifyPassword');
     Route::post('/modify-password-modify-send-password/{email}', 'sendformodifypassword')->name('sendForModifyPassword');
+});
+
+
+Route::controller(RentalController::class)->prefix('rental')->group(function(){
+   Route::get('/rental', 'rental')->name('rental'); 
+   Route::get('/add-rentals', function () {
+    return view('rentalView.add-rentals');
+});
+
 });
