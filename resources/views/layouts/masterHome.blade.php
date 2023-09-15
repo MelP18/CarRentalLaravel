@@ -3,35 +3,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <title>CarRental</title>
 </head>
 
 <body class="bg-blue-950">
 
-   
-
-    <div class="block w-full h-screen">
-
-        <header class="navbar mb-5 bg-primary">
-            <div class="header__content ">
-                <div class="header__logo ">
-                    <a href="{{ route('showCustomerLists') }}" class="text-dark text-decoration-none">GesCar</a>
+    <div class="wrapper">
+        <header>
+            <div class="container">
+                <div class="header__content">
+                    <div class="header__logo ">
+                        <a href="{{ route('showCustomerLists') }}"> 
+                            <img src="{{ asset('car_pictures/logo.png') }}" alt="car_image">
+                        </a>
+                    </div>
+                    <div class="header__menus">
+                        <ul class="header__menu__list">
+                            <li class="header__menu__list__item">
+                                <a href="{{ route('showCustomerLists') }}">Home</a>
+                            </li>
+                            <li class="header__menu__list__item">
+                                <a href="{{ route('showCarLists') }}">Car Management</a>
+                            </li>
+                            <li class="header__menu__list__item">
+                                <a href="#">Rental Management</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="header__menus">
-                <nav class="header__menu__list">
-                    <li class="header__menu__list__item">
-                        <a href="{{ route('showCustomerLists') }}">Home</a>
-                    </li>
-                    <li class="header__menu__list__item">
-                        <a href="{{ route('showCarLists') }}">Car Management</a>
-                    </li>
-                    <li class="header__menu__list__item">
-                        <a href="#">Rental Management</a>
-                    </li>
-                </nav>
-            </div>
-        
         </header>
 
         <main>
@@ -70,14 +71,16 @@
         
             @endif
 
-
             @yield('content')
 
         </main>
 
     </div>
 
+    
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    
 </body>
 
 </html>

@@ -97,7 +97,11 @@ class UserController extends Controller
     VERIFICATION DE L'EXISTENCE DES INFORMATIONS DANS LA 
     BASE DE DONNÉE<+++========*/
     public function sendlogin(Request $request){
-
+        $request->validate([
+            'email' =>'required',
+            'password' => 'required',
+        ]);
+        
         $user = Auth::attempt([
             'email' =>$request->email,
             'password' => $request->password,

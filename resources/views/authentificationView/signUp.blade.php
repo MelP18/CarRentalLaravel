@@ -1,9 +1,8 @@
-@extends('layouts.masterRegister')
 
 @extends('layouts.masterRegister') 
 
-@section('content')
+    @section('content')
 
-    @include('includes.authentification.signUpForm')
+        @include('includes.authentification.signUpForm')
 
-@endsection
+    @endsection
