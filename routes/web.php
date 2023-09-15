@@ -1,6 +1,10 @@
 <?php
+
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ModalController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,10 +28,41 @@ Route::get('/', function () {
 
 
 
+Route::controller(CategoryController::class)->prefix('car')->group(function(){
+    Route::get('/add-category-car', 'addcategorycar')->name('addCategoryCar');
+    Route::post('/send-category-car', 'sendcategorycar')->name('sendCategoryCar');
+    Route::get('/modify-category-car', 'modifycategorycar')->name('modifyCategoryCar');
+    Route::post('/send-modify-category-car', 'sendmodifycategorycar')->name('sendModifyCategoryCar');
+    Route::get('/delete-category-car', 'deletecategorycar')->name('deleteCategoryCar');
+    Route::post('/send-delete-category-car', 'senddeletecategorycar')->name('sendDeleteCategoryCar');
+});
+
+
+Route::controller(BrandController::class)->prefix('brand')->group(function(){
+    Route::get('/add-brand-car', 'addbrandcar')->name('addBrandCar');
+    Route::post('/send-brand-car', 'sendbrandcar')->name('sendBrandCar');
+    Route::get('/modify-brand-car', 'modifybrandcar')->name('modifyBrandCar');
+    Route::post('/send-modify-brand-car', 'sendmodifybrandcar')->name('sendModifyBrandCar');
+    Route::get('/delete-brand-car', 'deletebrandcar')->name('deleteBrandCar');
+    Route::post('/send-delete-brand-car', 'senddeletebrandcar')->name('sendDeleteBrandCar');
+});
+
+
+Route::controller(ModalController::class)->prefix('model')->group(function(){
+    Route::get('/add-modal-car', 'addmodalcar')->name('addModalCar');
+    Route::post('/send-modal-car', 'sendmodalcar')->name('sendModalCar');
+    Route::get('/modify-modal-car', 'modifymodalcar')->name('modifyModalCar');
+    Route::post('/send-modify-modal-car', 'sendmodifymodalcar')->name('sendModifyModalCar');
+    Route::get('/delete-modal-car', 'deletemodalcar')->name('deleteModalCar');
+    Route::post('/send-delete-modal-car', 'senddeletemodalcar')->name('sendDeleteModalCar');
+});
 
 
 Route::controller(CarController::class)->prefix('car')->group(function(){
     Route::get('/car-lists', 'showcarlists')->name('showCarLists');
+    Route::get('/add-car', 'addcar')->name('addCar');
+    Route::post('/send-car-add', 'sendcaradd')->name('sendCarAdd');
+    Route::get('/show-car', 'showcar')->name('showCar');
 });
 
 Route::controller(CustomerController::class)->middleware('auth')->group(function(){

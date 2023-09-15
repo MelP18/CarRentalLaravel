@@ -1,32 +1,62 @@
-<div class="flex flex-col justify-center items-center gap-10 w-full h-screen">
-    <form method="POST" action="{{route('sendForVerifyEmail')}}">
-        @csrf
-        <div class="bg-gray-500 py-2">
-            <h2>Email Verification</h2>
+<div class="foreground__content">
+    <div class="foreground__header">
+        <div class="logo">
+            <img src="{{ asset('car_pictures/logo.png') }}" alt="LOGO">
         </div>
-        @if ($errors->any())
-                <div class="errors">
-                    <ul class="errors__list">  
+    </div>
+    <div class="fill__verification ">
+
+        <form method="POST" action="{{route('sendForVerifyEmail')}}">
+            @csrf
+
+            <div class="fill__form">
+                <h2>Email Verification</h2>
+            </div>
+           
+            @if (session('message'))
+
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Message success </strong> <br>{{ session('message') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        
+                    </button>
+        
+                </div>
+    
+            @endif
+    
+            @if (session('error'))
+        
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Message success </strong> <br>{{ session('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    </button>
+                </div>
+        
+            @endif
+
+            @if ($errors->any())
+        
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <ul>
                         @foreach ($errors->all() as $error)
-                            <ol class="errors__list__item">{{ $error }}</ol>
+                            <li>{{ $error }}</li><br />
                         @endforeach
                     </ul>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
                 </div>
-        @endif
-
-        @if(session('message'))
-            <div class="sucess">
-                <p class="sucess__message">{{session('message')}}</p>
-            </div>
-        @endif
-    
-        <div class="px-4">
-            <div class="flex-col gap-10 px-4">
+        
+            @endif
+           
+            
+            <div class="fill__field__list__item">
                 <label for="email">Email</label>
                 <input class="w-full" type="text" name="email" value="{{old('email')}}">
             </div>
-           
-        </div>
-        <button>Envoyez</button>
-    </form>
+            
+            <div class="btn__submit">
+                <button>Envoyez</button>
+            </div>
+            
+        </form>
 </div>
