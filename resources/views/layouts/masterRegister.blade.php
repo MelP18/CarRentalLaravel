@@ -12,7 +12,7 @@
         <div class="container mx-auto px-4">
            
             @yield('content')
-           
+            
         </div>
     </div>
 </body>

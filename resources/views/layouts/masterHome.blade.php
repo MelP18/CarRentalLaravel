@@ -27,7 +27,7 @@
                         <a href="{{ route('showCarLists') }}">Car Management</a>
                     </li>
                     <li class="header__menu__list__item">
-                        <a href="#">Rental Management</a>
+                        <a href="{{ route('rental') }}">Rental Management</a>
                     </li>
                 </nav>
             </div>
