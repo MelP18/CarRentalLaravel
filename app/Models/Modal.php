@@ -12,7 +12,7 @@ class Modal extends Model
 
 
     public function brandContent(){
-        return $this->belongsTo(Brand::class, 'brand_id');
+        return $this->belongsTo(Brand::class, 'brand_id', 'id');
     }
 
     public function carContent(){

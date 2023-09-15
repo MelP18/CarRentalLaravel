@@ -11,6 +11,6 @@ class Car extends Model
     protected $guarded = [];
 
     public function modalContent(){
-        return $this->belongsTo(Modal::class, 'modal_id');
+        return $this->belongsTo(Modal::class, 'modal_id','id');
     }
 }

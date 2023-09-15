@@ -31,10 +31,9 @@
     position: relative;
     padding: 0;
     margin: 0;
-   /*  z-index: 5; */
     box-sizing: border-box;
     font-size: 13px;
-    color: var(--black-color);
+    /* color: var(--black-color); */
     font-family: var(--regular-family);
 }
 
@@ -119,7 +118,30 @@ ul li{
 }
 .block__foreground__btn .btn__list .btn__list__item{
     display: flex;
+    align-items: center;
     gap:10px;
+}
+
+.block__foreground__btn .btn__list a:first-child i{
+    font-size: 15px;
+    color: var(--white-color);
+}
+.block__foreground__btn .btn__list a:first-child h4{
+    
+    color: var(--white-color);
+}
+
+.block__foreground__btn .btn__list .btn__list__item i{
+    font-size: 15px;
+    color: var(--orange-color);  
+}
+
+.block__foreground__btn .btn__list .btn__list__item h4{
+   font-size: 14px;
+   margin-bottom: 0 !important;
+   font-weight: bold;
+    color: var(--orange-color);
+    /* color: var(--white-color); */
 }
 
 /*======================== ++> FILL FIELD <++===============*/
@@ -372,7 +394,7 @@ header{
     height: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: 25px;
+    padding-top: 25px;
     gap: 25px;
 }
 
@@ -458,18 +480,18 @@ header{
     flex-direction: column;
     justify-content: flex-end;
     gap: 5px;
-    background: linear-gradient(0deg, var(--orange-color) -90.53%,
+    background: linear-gradient(0deg, var(--black-color) -90.53%,
      rgba(255, 255, 255, 0) 100%);
      
 }
 .wrapper main .main .main__block .main__content .main__information .car 
 .car__list .car__list__item .car__information .car__name h3{
     text-align: center;
-  font-family: var(--italic-family);
+  /* font-family: var(--italic-family); */
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 0  !important;
-  color: var(--orange-color);
+ /*  color: var(--orange-color); */
   padding-bottom: 5px;
 }
 .wrapper main .main .main__block .main__content .main__information .car .car__list 
@@ -496,15 +518,16 @@ header{
 
 .wrapper main .main .main__block .main__content .main__information .car .car__list 
 .car__list__item .car__information .car__princ__info .car__info h3{
-font-size: 14px;
+font-size: 13px;
   font-weight: bold;
+  font-family: var(--italic-family);
   margin-bottom: 0  !important;
 /*   color: var(--orange-color); */
   line-height: 15px !important;
 }
 .wrapper main .main .main__block .main__content .main__information .car .car__list 
 .car__list__item .car__information .car__princ__info .car__info  p{
-font-size: 14px;
+font-family: var(--italic-family);
   font-weight: bold;
   margin-bottom: 0  !important;
   color: var(--white-color);
@@ -535,11 +558,27 @@ font-size: 14px;
     color: var(--orange-color);
 }
 
-/*=====================+++> MODAL IMG <+++=========================  */
+/*=====================+++> CAR DETAIL<+++=========================  */
+.carousel-caption h5{
+    color: var(--orange-color) !important;
+    font-size: 18px;
+    font-family: var(--regular-family);
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+.carousel-caption p{
+    font-size: 15px;
+    font-family: var(--regular-family);
+    color: var(--white-color) !important;
+    letter-spacing: 2px;
+    font-weight: bold;
+    
+}
 .modal__body__content{
     display: flex;
     flex-direction: column;
     gap: 25px;
+    padding-bottom: 10px;
 }
 .slide__img{
     width: 100%;
@@ -561,7 +600,7 @@ table{
 
 thead{
     background-color: var(--orange-color);
-    background-color: var(--gray-color);
+    /* background-color: var(--gray-color); */
     width: 100%;
 }
 
@@ -573,13 +612,15 @@ thead th{
     text-align: left;
     padding: 10px 5px;
     color: white;
-   
+    font-size: 16px;
+    font-weight: bold;
 }
 tbody tr:nth-child(even){
     background-color: rgb(182, 179, 179);
 }
 tbody tr td{
     padding:5px;
+    font-size: 15px;
 }
 tbody tr td:last-child{
     gap: 5px; 
@@ -589,7 +630,7 @@ tbody tr td:last-child{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100% - ( 50px + 60px + 28px));
+    height: calc(100vh - ( 50px + 60px + 28px));
 }
 .crud form{
     display: flex;
@@ -599,7 +640,7 @@ tbody tr td:last-child{
     margin: 5px;
     width: 35%;
     box-shadow: 0 0 3px var(--orange-color);
-    background-color: var(--white-color);
+    background-color: white;
 }
 
 .crud form .field {
@@ -638,6 +679,7 @@ tbody tr td:last-child{
    justify-content: right;
    align-items: center;
 }
+
 .crud form .btn__form button{
     cursor: pointer;
     padding: 8px 20px;
@@ -649,4 +691,27 @@ tbody tr td:last-child{
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
+.add form {
+    margin-top: -35px;
+    margin-bottom: 35px;
+ }
+
+.add form .btn__form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+ }
+
+.add form .btn__form button{
+    cursor: pointer;
+    padding: 8px 20px;
+    background-color: var(--white-color);
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    color: var(--orange-color);
+    font-weight: bold; 
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
 

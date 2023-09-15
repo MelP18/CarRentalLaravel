@@ -6,6 +6,7 @@ use App\Models\Brand;
 use App\Models\Car;
 use App\Models\Category;
 use App\Models\Modal;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Http\Request;
@@ -14,8 +15,25 @@ use Illuminate\Support\Facades\Storage;
 class CarController extends Controller
 {
     public function showCarLists(){
-        $cars = Car::all();
-        return view('carView.carList', compact('cars'));
+        $cars = Car::paginate(3);
+
+        //dd($cars);
+        //$categorie = $cars[0]->modalContent->brandContent->categoryContent->name;
+        //dd($categorie);
+        $carList = [];
+        foreach($cars as $car){
+            $modalCar = $car->modalContent;
+            $carList[] = $modalCar;
+        }
+        //dd(count($carList));
+        return view('carView.carList', compact('carList', 'cars'));
+    }
+
+    public function showcar($id){
+        $car = Car::find($id);
+        $carModal = $car->modalContent;
+        //dd($car);
+        return view('carView.showCar', compact('car', 'carModal'));
     }
 
 

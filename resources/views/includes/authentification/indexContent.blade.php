@@ -12,16 +12,15 @@
         <div class="block__foreground__btn">
             <div class="btn__list">
                 <a class="btn__list__item" href="{{ route('signUp') }}">
-                    <i>Icone</i>
-                    <h4>S'inscrire</h4>
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <h4>Sign up</h4>
                 </a>
         
                 <a class="btn__list__item" href="{{ route('logIn') }}">
-                    <i>Icone</i>
-                    <h4>Se connecter</h4>
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <h4>Log in</h4>
                 </a>
             </div>
-
         </div>
     </div>
 </div>
