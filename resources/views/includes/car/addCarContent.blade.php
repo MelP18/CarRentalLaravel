@@ -103,6 +103,10 @@
                 <input type="text" name="car_name" value="{{$modal->brandContent->name.' '.$modal->model_name.' '.$modal->year}}">
             </div>
             <div>
+                <label for="year">Boîte de vitesse</label>
+                <input type="text" name="gearboxes" value="{{old('gearboxes')}}">
+            </div>
+            <div>
                 <label for="year">Puissance</label>
                 <input type="number" name="power" value="{{old('power')}}">
             </div>

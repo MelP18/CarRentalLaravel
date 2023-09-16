@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\Brand;
+use App\Models\Modal;
 use App\Models\Rental;
 use App\Models\Customer;
 use Illuminate\Http\Request;
@@ -10,40 +12,46 @@ use Illuminate\Http\Request;
 class RentalController extends Controller
 {
     public function rental(){
-        $customer = Customer::all();
-        $cars = Car::all();
-        $rentals = Rental::with('customer', 'car')->get();
-        
-        //dd($affectation);
-    
-        //$students = Etudiants::where('users_id', $id)->paginate(10); // Récupère tous les éléments de la table "students"
-        
-        return view('rentalView.rental', compact('customer', 'cars', 'rentals'));
+        return view('rentalView.rental');
 
     }
 
-    public function store(Request $request){
+    public function addRentals(){
+
+        $customer = Customer::all();
+        $cars = Car::all();
+        $brands = Brand::all();
+        $modals = Modal::all();
+        //$rentals = Rental::with('customer', 'car', 'brands','modals')->get();
+        //dd($customer);    
+        
+        return view('rentalView.add-rentals', compact('customer', 'cars', 'brands', 'modals'));
+    }
+
+    public function storeRental(Request $request){
         $data = $request->all();
         //dd($data);
        
         $request->validate([
-            'etudiant_id' => 'required',
-            'cours_id' => 'required|array',
-        ]);
+            'customer_id' => 'required',
+            'car_id' => 'required',
+            'car_release_date' => 'required',
+            'expected_return_date' => 'required',
+            'effective_return_date' => 'required',
+            'observations' => 'required',
 
-        $courseIds = $request ->input('cours_id');
-       //dd($data);
-        
-       foreach ($courseIds as $courseId) {
-        AffectCours::updateOrcreate([
-            "etudiant_id" => $data["etudiant_id"],
-            "cours_id" => $courseId,
         ]);
-    }
-       
-            
-        
-        
+        //dd($request);
+
+        $save = Rental::create([
+            'customer_id' => $request->customer_id,
+            'car_id' => $request->car_id,
+            'car_release_date' => $request->car_release_date,
+            'expected_return_date' => $request->expected_return_date,
+            'effective_return_date' => $request->effective_return_date,
+            'observations' => $request->observations,
+        ]);
+    
         return back();
 
 
