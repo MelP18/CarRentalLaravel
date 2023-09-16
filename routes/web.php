@@ -63,7 +63,7 @@ Route::controller(CarController::class)->prefix('car')->group(function(){
     Route::get('/car-lists', 'showcarlists')->name('showCarLists');
     Route::get('/add-car', 'addcar')->name('addCar');
     Route::post('/send-car-add', 'sendcaradd')->name('sendCarAdd');
-    Route::get('/show-car', 'showcar')->name('showCar');
+    Route::get('/show-car/{id}', 'showcar')->name('showCar');
 });
 
 Route::controller(CustomerController::class)->middleware('auth')->group(function(){

@@ -13,4 +13,11 @@ class Brand extends Model
     public function modalContent(){
         return $this->hasmany(Modal::class);
     }
+
+    public function categoryContent(){
+        return $this->belongsTo(Category::class, 'category_id', 'id');
+    }
+
+
+
 }
