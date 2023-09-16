@@ -28,7 +28,7 @@
                                 <a href="{{ route('showCarLists') }}">Car Management</a>
                             </li>
                             <li class="header__menu__list__item">
-                                <a href="#">Rental Management</a>
+                                <a href="{{ route('rental') }}">Rental Management</a>
                             </li>
                             <li class="header__menu__list__item">
                                 <a href="#">
@@ -39,20 +39,6 @@
                     </div>
                 </div>
             </div>
-            <div class="header__menus">
-                <nav class="header__menu__list">
-                    <li class="header__menu__list__item">
-                        <a href="{{ route('showCustomerLists') }}">Home</a>
-                    </li>
-                    <li class="header__menu__list__item">
-                        <a href="{{ route('showCarLists') }}">Car Management</a>
-                    </li>
-                    <li class="header__menu__list__item">
-                        <a href="{{ route('rental') }}">Rental Management</a>
-                    </li>
-                </nav>
-            </div>
-        
         </header>
 
         <main>

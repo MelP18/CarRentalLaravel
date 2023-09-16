@@ -11,12 +11,12 @@ class Rental extends Model
 
     protected $fillable = ["customer_id","cars_id", "car_release_date", "expected_return_date", "effective_return_date", "observations"];
 
-    protected $with = ['cars'];
-    protected $table ="affectation";
+    //protected $with = ['cars'];
+    protected $table ="rentals";
 
         public function cars()
     {
-        return $this->belongsTo(Cars::class, 'car_id', 'id');
+        return $this->belongsTo(Car::class, 'car_id', 'id');
     }
 
     public function customer()

@@ -88,8 +88,9 @@ Route::controller(UserController::class)->prefix('authentification')->group(func
 
 Route::controller(RentalController::class)->prefix('rental')->group(function(){
    Route::get('/rental', 'rental')->name('rental'); 
-   Route::get('/add-rentals', function () {
-    return view('rentalView.add-rentals');
-});
+   Route::get('/add-rentals', 'addRentals')->name('addRentals');
+
+Route ::post ('/store-rental',"storeRental")->name("storeRental");
+
 
 });
