@@ -13,4 +13,9 @@ class Customer extends Model
     ];
     protected $table ="customers";
 
+    public function rentals()
+    {
+        return $this->hasMany(Rental::class, 'customer_id', 'id');
+    }
+
 }

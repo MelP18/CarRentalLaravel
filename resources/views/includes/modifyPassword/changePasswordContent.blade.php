@@ -1,35 +1,66 @@
-<div class="connection">
-    <form method="POST" action="{{route('sendForModifyPassword', ['email'=> $email])}}" class="fieldform">
-        @csrf
-        <h2>Changement du mot de passe</h2>
-        <div class="fieldform__list">
-            @if($errors->any())
-            <div class="errors">
-                <ul class="errors__list">
-                    @foreach($errors->all() as $error)
-                        <li class="errors__list__item">{{$error}}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
+<div class="foreground__content">
+    <div class="foreground__header">
+        <div class="logo">
+            <img src="{{ asset('car_pictures/logo.png') }}" alt="LOGO">
+        </div>
+    </div>
+    <div class="fill__modify__password">
+        <form method="POST" action="{{route('sendForModifyPassword', ['email'=> $email])}}" class="fieldform">
+            @csrf
 
-            @if(session('message'))
-                <div class="message">
-                    <p>{{session('message')}}</p>
+            <div class="fill__form">
+                <h2>Modify Password</h2>
+            </div>
+           
+            @if (session('message'))
+
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Message success </strong> <br>{{ session('message') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        
+                    </button>
+        
                 </div>
+    
+            @endif
+    
+            @if (session('error'))
+        
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Message success </strong> <br>{{ session('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    </button>
+                </div>
+        
             @endif
 
-            <div class="fieldform__list__item">
-                <label for="email">Password</label>
-                <input type="password" name="password">
-            </div>
-            <div class="fieldform__list__item">
-                <label for="email">Confirmez Mot de passe</label>
-                <input type="password" name="password_confirmation">
-            </div>
-        </div>  
-        <div class="connection-btn">
-            <button type="submit">Modifier</button>
-        </div> 
-    </form>
+            @if ($errors->any())
+        
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li><br />
+                        @endforeach
+                    </ul>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+                </div>
+        
+            @endif
+            
+            
+            <div class="fill__field__list">
+                <div class="fill__field__list__item">
+                    <label for="email">Password</label>
+                    <input type="password" name="password">
+                </div>
+                <div class="fill__field__list__item">
+                    <label for="email">Confirm Password</label>
+                    <input type="password" name="password_confirmation">
+                </div>
+            </div>  
+            <div class="btn__submit">
+                <button type="submit">Modify</button>
+            </div> 
+
+        </form>
 </div>  

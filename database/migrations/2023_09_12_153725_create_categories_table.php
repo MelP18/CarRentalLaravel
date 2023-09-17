@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateModalsTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class CreateModalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('modals', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('model_name');
-            $table->year('year');
-            $table->foreignId('brand_id')->nullable()
-                ->constrained('brands')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            $table->string('name')->unique();
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ class CreateModalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('modals');
+        Schema::dropIfExists('categories');
     }
 }

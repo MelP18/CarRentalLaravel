@@ -1,37 +1,71 @@
-<div class="flex flex-col justify-center items-center gap-10 w-full h-screen">
-    <form method="POST" action="{{route('sendLogIn')}}">
-        @csrf
-        <div class="bg-gray-500 py-2">
-            <h2>CONNEXION</h2>
+<div class="foreground__content">
+    <div class="foreground__header">
+        <div class="logo">
+            <img src="{{ asset('car_pictures/logo.png') }}" alt="LOGO">
         </div>
-        @if ($errors->any())
-                <div class="errors">
-                    <ul class="errors__list">  
+    </div>
+    <div class="fill__connection">
+        <form method="POST" action="{{route('sendLogIn')}}">
+            @csrf
+            <div class="fill__form">
+                <h2>CONNEXION</h2>
+            </div>
+
+           
+
+            @if (session('message'))
+
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Message success </strong> <br>{{ session('message') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        
+                    </button>
+        
+                </div>
+    
+            @endif
+    
+            @if (session('error'))
+        
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Message success </strong> <br>{{ session('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    </button>
+                </div>
+        
+            @endif
+
+            @if ($errors->any())
+        
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <ul>
                         @foreach ($errors->all() as $error)
-                            <ol class="errors__list__item">{{ $error }}</ol>
+                            <li>{{ $error }}</li><br />
                         @endforeach
                     </ul>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
                 </div>
-        @endif
+        
+            @endif
 
-        @if(session('message'))
-            <div class="sucess">
-                <p class="sucess__message">{{session('message')}}</p>
+            <div class="fill__field__list">
+                <div class="fill__field__list__item">
+            
+                    <label for="email">Email</label>
+                    <input type="text" name="email" value="{{old('email')}}">
+                </div>
+                <div class="fill__field__list__item">
+                    <label for="password">Password</label>
+                    <input type="password" name="password">
+                </div>
             </div>
-        @endif
-    
-        <div class="px-4">
-            <div class="flex-col gap-10 px-4">
-                <label for="email">Email</label>
-                <input class="w-full" type="text" name="email" value="{{old('email')}}">
+            <div class="queried">
+                <p>Pas encore inscrit? <a href="{{route('signUp')}}">S'inscrire</a></p>
+                <p><a href="{{route('verifyEmail')}}">Mot de Passe oublié?</a><p>
             </div>
-            <div class="flex-col gap-10 px-4">
-                <label for="password">Mot de Passe</label>
-                <input class="w-full" type="password" name="password">
+            <div class="btn__submit">
+                <button>Login</button>
             </div>
-        </div>
-        <p>Pas encore inscrit? <a href="{{route('signUp')}}">S'inscrire</a></p>
-        <a href="{{route('verifyEmail')}}">Mot de Passe oublié?</a>
-        <button>Se connecter</button>
-    </form>
+        </form>
+    </div>
 </div>

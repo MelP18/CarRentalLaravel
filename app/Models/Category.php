@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 
-    protected $fillable = ["name"];
-    protected $table ="categories";
+    public function brandContent(){
+        return $this->hasMany(Brand::class);
+    }
+    
 }
