@@ -38,14 +38,7 @@
         <label for="expected_return_date">Retour prévu</label>
         <input type="date" name="expected_return_date" value="{{old('expected_return_date')}}">
     </div>
-    <div>
-        <label for="effective_return_date">Date effective de retour</label>
-        <input type="date" name="effective_return_date" value="{{old('effective_return_date')}}">
-    </div>
-    <div>
-        <label for="">Observations</label>
-        <textarea type="text" name="observations" value="{{old('observations')}}"></textarea>
-    </div>
+    
     
     <button>Enregistrer</button>
 </form> 

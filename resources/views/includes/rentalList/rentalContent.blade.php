@@ -7,9 +7,9 @@
 <table class="table table table-striped table-bordered">
     <thead class="table-dark">
         <tr>
-            <th scope="col">N°</th>
             <th scope="col">Customer Name</th>
             <th scope="col">Car Name</th>
+            <th scope="col">Fiche Technique</th>
             <th scope="col">Car Release Date</th>
             <th scope="col">Expected Return Date</th>
             <th scope="col">Effective Return Ddate</th>
@@ -23,9 +23,12 @@
         <tbody>
             @foreach ($rental as $item)
                 <tr>
-                    <td>{{ $item->id }}</td>
                     <td>{{ $item->customer->nom }} {{ $item->customer->prenom }}</td>
-                    <td>{{ $item->cars->modalContent->brandContent->name . ' ' . $item->cars->modalContent->model_name . ' ' . $item->cars->modalContent->year }}
+                    <td>{{ $item->cars->modalContent->brandContent->name . ' ' . $item->cars->modalContent->model_name . ' ' . $item->cars->modalContent->year }}</td>
+                    <td>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">
+                            <a href="{{ route('show', ['id' => $item->cars->id]) }}">Voir</a>
+                        </button>
                     </td>
                     <td>{{ $item->car_release_date }}</td>
                     <td>{{ $item->expected_return_date }}</td>
@@ -36,17 +39,8 @@
                     <td>
                         <div class=" btn-group">
                             <button type="button" class="btn btn-sm btn-outline-secondary">
-                                <a href="{{ route('show', ['id' => $item->cars->id]) }}">Voir Plus </a> </button>
-
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                <a class="" href="{{ route('updated', ['id' => $item['id']]) }}">Modifier</a>
+                                <a class="" href="{{ route('rentalEdit', ['id' => $item['id']]) }}">Mettre à jour</a>
                             </button>
-
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                <a class="" href="">
-                                    Supprimer
-                                </a></button>
-
                         </div>
                     </td>
                 </tr>

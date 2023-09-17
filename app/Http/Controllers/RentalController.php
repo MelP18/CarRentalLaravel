@@ -64,8 +64,8 @@ class RentalController extends Controller
         'car_id' => $request->car_id,
         'car_release_date' => $request->car_release_date,
         'expected_return_date' => $request->expected_return_date, 
-        'effective_return_date' => $request->effective_return_date,
-        'observations' => $request->observations,
+        /*'effective_return_date' => $request->effective_return_date,
+        'observations' => $request->observations,*/
     ]);
     //dd($save);
         
@@ -91,6 +91,7 @@ class RentalController extends Controller
 
     public function updated(Request $request, $id)
     {
+        $data = $request -> all();
         $request->validate([
             'effective_return_date' => 'required|date',
         ]);
@@ -109,6 +110,7 @@ class RentalController extends Controller
     
         $rental->effective_return_date = $effectiveReturnDate;
         $rental->status = $status;
+        $rental ->observations = $data['observations'];        
         $rental->save();
 
         
