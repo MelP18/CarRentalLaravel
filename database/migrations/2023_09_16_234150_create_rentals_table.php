@@ -15,9 +15,9 @@ class CreateRentalsTable extends Migration
     {
         Schema::create('rentals', function (Blueprint $table) {
             $table->id();
-            $table->datetime('car_release_date')->nullable();
-            $table->datetime('expected_return_date')->nullable();
-            $table->datetime('effective_return_date')->nullable();
+            $table->date('car_release_date')->nullable();
+            $table->date('expected_return_date')->nullable();
+            $table->date('effective_return_date')->nullable();
             $table->string('observations')->nullable();
             $table->foreignId('customer_id')->nullable()
                 ->constrained('customers')
@@ -27,6 +27,7 @@ class CreateRentalsTable extends Migration
                 ->constrained('cars')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->string('status')->default('En attente');
             $table->timestamps();
         });
     }

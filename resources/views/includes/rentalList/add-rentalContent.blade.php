@@ -18,8 +18,8 @@
         </select> 
     </div>
     <div>
-        <label for="year">Nom de la Voiture</label>
-        <select name="car_id" id="">
+        <label for="car_id">Nom de la Voiture</label>
+        <select name="car_id" id="car_id">
             @if(isset($cars))
                 @foreach ($modals as $modal)
                 <option value="{{ $modal->id }}">
@@ -31,15 +31,15 @@
         </select> 
     </div>
     <div>
-        <label for="">Date de sotie</label>
+        <label for="car_release_date">Date de sotie</label>
         <input type="date" name="car_release_date" value="{{old('car_release_date')}}">
     </div>
     <div>
-        <label for="">Retour prévu</label>
+        <label for="expected_return_date">Retour prévu</label>
         <input type="date" name="expected_return_date" value="{{old('expected_return_date')}}">
     </div>
     <div>
-        <label for="">Date effective de retour</label>
+        <label for="effective_return_date">Date effective de retour</label>
         <input type="date" name="effective_return_date" value="{{old('effective_return_date')}}">
     </div>
     <div>

@@ -89,8 +89,13 @@ Route::controller(UserController::class)->prefix('authentification')->group(func
 Route::controller(RentalController::class)->prefix('rental')->group(function(){
    Route::get('/rental', 'rental')->name('rental'); 
    Route::get('/add-rentals', 'addRentals')->name('addRentals');
+   Route::get('/show-car/{id}', 'show')->name('show');
 
 Route ::post ('/store-rental',"storeRental")->name("storeRental");
 
 
 });
+
+Route::get('edit/{id}',[RentalController::class,"modify"])->name("rentalEdit");
+
+Route::put('updated/{id}',[RentalController::class,"updated"])->name("updated");
