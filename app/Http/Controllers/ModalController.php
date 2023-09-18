@@ -32,13 +32,15 @@ class ModalController extends Controller
             ['brand_id', $request->brand_id]
         ])->first();
 
-        if(!$modal){
-            $save = Modal::create([
-                'model_name'=> $request->model_name,
-                'year' => $request->year,
-                'brand_id'  =>$request->brand_id
-            ]);
+        if($modal){
+            return redirect()->back()->with('error', "Model already exist");
         }
+
+        $save = Modal::create([
+            'model_name'=> $request->model_name,
+            'year' => $request->year,
+            'brand_id'  =>$request->brand_id
+        ]);
        
         return redirect()->back()->with('message', "Modèle ajouté avec succès");
     }

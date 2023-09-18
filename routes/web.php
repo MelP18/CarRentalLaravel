@@ -68,6 +68,7 @@ Route::controller(CarController::class)->prefix('car')->group(function(){
     Route::get('/add-car', 'addcar')->name('addCar');
     Route::post('/send-car-add', 'sendcaradd')->name('sendCarAdd');
     Route::get('/show-car/{id}', 'showcar')->name('showCar');
+    Route::get('/car-charateristics', 'carcharateristicslist')->name('CarCharacteristicsList');
 });
 
 Route::controller(CustomerController::class)->middleware('auth')->group(function(){
@@ -82,6 +83,7 @@ Route::controller(UserController::class)->prefix('authentification')->group(func
     Route::post('/send-registration', 'sendsignup')->name('sendSignUp');
     Route::get('/send-registration-mail/{email}', 'sendsignupmail')->name('sendSignUpMail');
     Route::get('/connection', 'login')->name('logIn');
+    Route::get('/logout','logout')->name("logOut");
     Route::post('/send-connection', 'sendlogin')->name('sendLogIn');
     Route::get('/modify-password-verification-email', 'verifyemail')->name('verifyEmail');
     Route::post('/modify-password-send-email', 'sendforverifyemail')->name('sendForVerifyEmail');

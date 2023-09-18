@@ -97,5 +97,13 @@ class CarController extends Controller
     
         return redirect()->route('showCarLists')->with('message', 'Voiture ajoutée avec sucèss');
     }
+
+    public function carcharateristicslist(){
+        $categories = Category::all();
+        $brands = Brand::all();
+        $modals = $brands[0]->modalContent;
+        //dd($modals);
+        return view('carView.carCharateristics',compact('categories','brands','modals'));
+    }
    
 }

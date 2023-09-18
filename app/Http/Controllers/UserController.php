@@ -117,6 +117,11 @@ class UserController extends Controller
     }
 
 
+    public function logout(){
+        Auth::logout();
+        return view('authentificationView.logIn');
+    }
+
 
     /*=========+++> OUVERTURE DE LA PAGE POUR INSERTION 
     DE MAIL POUR VERIFICATION <+++========*/
