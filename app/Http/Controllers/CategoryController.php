@@ -18,12 +18,17 @@ class CategoryController extends Controller
             'name'=> "required"
         ]);
 
+        $category = Category::where('name',$request->name)->first();
+        if($category){
+            return redirect()->back()->with('error', "Category already exist");
+        }
+
         //dd($request->name);
         $save = Category::create([
             'name'=> $request->name
         ]);
         
-        return redirect()->back()->with('message', "Catégorie ajoutée avec succès");
+        return redirect()->back()->with('message', "Category successfully added");
     }
 
 
@@ -44,7 +49,7 @@ class CategoryController extends Controller
             'name' => $request->name
         ]);
 
-        return redirect()->route('showCarLists')->with('message', 'Catégorie modifiée avec sucèss');
+        return redirect()->route('showCarLists')->with('message', 'Category modified successfully');
     }
 
     public function deletecategorycar(){
@@ -60,7 +65,7 @@ class CategoryController extends Controller
 
         $save = Category::where('id', $request->category_id)->delete();
 
-        return redirect()->route('showCarLists')->with('message', 'Catégorie supprimée avec sucèss');
+        return redirect()->route('showCarLists')->with('message', 'Category deleted successfully');
     }
 }
      

@@ -46,18 +46,18 @@ class RentalController extends Controller
     public function storeRental(Request  $request){
         $data = $request->all();
         //dd($data);
-       
+        
         $request->validate([
             'customer_id' => 'required',
             'car_id' => 'required',
             'car_release_date' => 'required|date|after_or_equal:today',
             'expected_return_date' => 'required|date|after_or_equal:today',
-            'effective_return_date' => 'nullable',
-            'observations' => 'nullable',
+            /*'effective_return_date' => 'nullable',
+            'observations' => 'nullable',*/
 
         ]);
-        //dd($request);
-
+        
+        //dd($request->car_id);
         $save = Rental::create([
         'customer_id' => $request->customer_id,
         'car_id' => $request->car_id,

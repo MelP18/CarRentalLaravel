@@ -16,16 +16,12 @@ class CarController extends Controller
 {
     public function showCarLists(){
         $cars = Car::paginate(3);
-
-        //dd($cars);
-        //$categorie = $cars[0]->modalContent->brandContent->categoryContent->name;
-        //dd($categorie);
         $carList = [];
         foreach($cars as $car){
             $modalCar = $car->modalContent;
             $carList[] = $modalCar;
         }
-        //dd(count($carList));
+        //dd($carList);
         return view('carView.carList', compact('carList', 'cars'));
     }
 
@@ -96,6 +92,14 @@ class CarController extends Controller
         ]) ;
     
         return redirect()->route('showCarLists')->with('message', 'Voiture ajoutée avec sucèss');
+    }
+
+    public function carcharateristicslist(){
+        $categories = Category::all();
+        $brands = Brand::all();
+        $modals = $brands[0]->modalContent;
+        //dd($modals);
+        return view('carView.carCharateristics',compact('categories','brands','modals'));
     }
    
 }

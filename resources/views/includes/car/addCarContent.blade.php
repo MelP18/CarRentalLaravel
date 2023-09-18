@@ -40,9 +40,9 @@
         
             @endif
 
-            <div class="crud">
-
-                @if ($categories->count() == 0)
+          
+            @if ($categories->count() == 0)
+                <div class="crud">
                     <form method="POST" action="{{route('sendCategoryCar')}}">
                         @csrf
                         <div>
@@ -55,9 +55,11 @@
                             <button>Save</button>
                         </div>
                     </form>
-                @endif
+                </div>
+            @endif
 
-                @if($categories->count() != 0 && $brands->count() == 0)
+            @if($categories->count() != 0 && $brands->count() == 0)
+                <div class="crud">
                     <form method="POST" action="{{route('sendBrandCar')}}">
                         @csrf
                         <div>
@@ -80,9 +82,12 @@
                             <button>Save</button>
                         </div>
                     </form>
-                @endif
+                </div>
+            @endif
 
-                @if($brands->count() != 0 && $modals->count() == 0)
+
+            @if($brands->count() != 0 && $modals->count() == 0)
+                <div class="crud">
                     <form method="POST" action="{{route('sendModalCar')}}">
                         @csrf
                         <div>
@@ -111,11 +116,20 @@
                             <button>Save</button>
                         </div>
                     </form>
-                @endif
+                </div>
+            @endif
 
-            </div>
-            <div class="add">
-                @if($modals->count() != 0)
+
+           
+            @if($modals->count() != 0)
+               
+                <div class="table__btn">
+                    <div class="add">
+                        <a href="{{ route('showCarLists') }}">Car list</a>
+                    </div>
+                </div>
+            
+                <div class="add">
                     <form method="POST" action="{{route('sendCarAdd')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="field__form">
@@ -201,9 +215,9 @@
                         <div class="btn__form">
                             <button>Save</button>
                         </div>  
-                    </form>
-                @endif
-            </div>
+                    </form>  
+                </div>
+            @endif
         </div>
     </div>
 </div>
