@@ -129,7 +129,7 @@
                      </div>
                      @else
                 <div class="empty__page">
-                    <h3>No rental added</h3>
+                    <h3>No customer added</h3>
                 </div>
             @endif
 
