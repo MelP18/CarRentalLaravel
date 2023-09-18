@@ -79,7 +79,7 @@
                                     <td>{{ $item->expected_return_date }}</td>
                                    
                                     
-                                    <td>{{ $item->status }}</td> <!-- Placez la colonne "Status" ici -->
+                                    <td class="badge " @if ($item->status === 'Délai respecté') style="color: white; background-color: green; font-weight: 900" @elseif ($item->status === 'Délai non respecté') style="color: white; background-color: red; font-weight: 900" @else style="color: white; background-color: orange; font-weight: 900" @endif>{{ $item[ 'status'] }}</td>>{{ $item->status }}</td> <!-- Placez la colonne "Status" ici -->
                                     
                                     <td>{{ $item->effective_return_date }}</td>
                                     <td>{{ $item->observations }}</td>
@@ -100,10 +100,8 @@
                                 </tr>
                             @endforeach
                         </tbody>
-
-                </table>
+                    </table>
                 <div class="paginate d-flex justify-content-end m-5">
-
                 </div>
                 @else
                 <div class="empty__page">
