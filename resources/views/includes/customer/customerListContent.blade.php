@@ -1,7 +1,16 @@
 <div class="container">
 
 <div class="d-flex justify-content-end ">
-    <a href="{{ route('addCustomer') }}" style="width:10%" class="btn btn-primary   ">
+    <a href="{{ route('addCustomer') }}" style="width:10%
+    cursor: pointer;
+    padding: 8px 20px;
+    background-color: var(--white-color);
+    border: none;
+    margin:15px 0;
+    border-radius: 5px;
+    color: var(--orange-color);
+    font-weight: bold; 
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;" >
         Add Customer
      </a>
 </div>
@@ -49,8 +58,8 @@
                     <td class="text-center">
                         <div class="mt-2">
                         <div class=" btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                <a href="{{route('customerProfil',['id'=>$item['id']])}}">Voir</a> </button>
+                            <button type="button"  class="btn btn-sm btn-outline-secondary">
+                                <a href="{{route('customerProfil',['id'=>$item['id']])}}">Voir plus</a> </button>
 
                             <button type="button" class="btn btn-sm btn-outline-secondary">
                                 <a  href="{{route('getCustomer',['ids'=>$item->id])}}">Modifier</a>

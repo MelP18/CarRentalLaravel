@@ -1,5 +1,5 @@
 @if (@isset($ids))
-    <form  class="container" style="width: 45%" action="{{ route('customerUpdate', ['ids' => $ids]) }}" method="POST" enctype="multipart/form-data">
+    <form  class="container mt-5" style="width: 45%" action="{{ route('customerUpdate', ['ids' => $ids]) }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class=" d-flex flex-column justify-content-center">
 
@@ -44,7 +44,7 @@
     </form>
     
 @elseif(@isset($id))
-    <div class="card m-auto d-flex justify-content-center" style="width: 30rem;">
+    <div class="card m-auto d-flex justify-content-center mt-5" style="width: 30rem;">
         <div class="d-flex justify-content-center">
             <img style="width: 300px ;
    Height:300px;box-shadow: 2px 1px 2px 1px;border-radius:50%"
@@ -70,37 +70,37 @@
         </ul>
        
     </div>
-    </div>
     <div class="card-body text-center">
         
-      <a 
-          
+        <a 
+            
+      
+        @if ($id >1)
+        href="{{route("customerProfil",['id'=>$customer['id']- 1 ])}}" 
+        @else
+        href="{{route("showCustomerLists")}}" 
+         
+        @endif class="btn btn-primary m-4">Retour</a>
+        <a 
+        @if ($id < sizeof($lenght))
+        href="{{route("customerProfil",['id'=>$customer['id']+ 1 ])}}" 
+        @else
+        href="{{route("showCustomerLists")}}"
+        @endif  class="btn btn-primary m-4">Suivant</a>
+            
     
-      @if ($id >1)
-      href="{{route("customerProfil",['id'=>$customer['id']- 1 ])}}" 
-      @else
-      href="{{route("showCustomerLists")}}" 
        
-      @endif class="btn btn-primary m-4">Retour</a>
-      <a 
-      @if ($id < sizeof($lenght))
-      href="{{route("customerProfil",['id'=>$customer['id']+ 1 ])}}" 
-      @else
-      href="{{route("showCustomerLists")}}"
-      @endif  class="btn btn-primary m-4">Suivant</a>
-          
-  
-     
-  </div>
+    </div>
+    </div>
+    
  
  
 
 @else
-    <div style="width: 60%" class="container">
-
+    <div style="width: 60%; height :800px" class="container mt-5 ">
 
         <form action="{{ route('storecustomer') }}" method="POST" enctype="multipart/form-data"
-            class=" d-flex flex-column justify-content-center">
+            class=" d-flex flex-column ">
             @csrf
 
             <div class="form-floating mb-3">
@@ -134,7 +134,16 @@
                 <label for="formFile" class="form-label">Image</label>
                 <input class="form-control" name="photo" type="file" id="formFile">
             </div>
-            <button style="width: 30%" class="btn btn-primary m-auto" type="submit">
+            <button style="width: 30%;
+             cursor: pointer;
+    padding: 8px 20px;
+    background-color: var(--white-color);
+    border: none;
+    margin:15px 0;
+    border-radius: 5px;
+    color: var(--orange-color);
+    font-weight: bold; 
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;" class="btn m-auto" type="submit">
                 Ajouter
             </button>
         </form>
