@@ -84,14 +84,14 @@
                                     <td>{{ $item->effective_return_date }}</td>
                                     <td>{{ $item->observations }}</td>
                                     <td>
-                                        <div class="main__btn">
+                                        <div class="table__btn">
                                             <div class="add">
                                                 <a href="{{ route('show', ['id' => $item->cars->id]) }}">Technical data</a>
                                             </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="main__btn">
+                                        <div class="table__btn">
                                             <div  class="add">
                                                 <a class="" href="{{ route('rentalEdit', ['id' => $item['id']]) }}">Update</a>
                                             </div>

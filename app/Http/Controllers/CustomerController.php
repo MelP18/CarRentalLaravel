@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class CustomerController extends Controller
 {
     public function showcustomerlists(){  
-        $table = Customer::paginate(1);
+        $table = Customer::paginate(4);
         $ids =  Customer::pluck('id');
       
           return view('customerView.customerList', compact("table"));

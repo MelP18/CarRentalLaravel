@@ -32,9 +32,9 @@
                             <li class="header__menu__list__item">
                                 <a href="{{ route('rental') }}">Rental Management</a>
                             </li>
-                            <li class="header__menu__list__item">
+                           {{--  <li class="header__menu__list__item">
                                 <a href="{{ route('CarCharacteristicsList') }}">All Characterisctics</a>
-                            </li>
+                            </li> --}}
                             <li class="header__menu__list__item">
                                 <a href="{{route('logOut')}}">
                                     <i class="fa-solid fa-arrow-right-from-bracket"></i>

@@ -399,7 +399,6 @@ header {
     width: 100%;
     height: calc(100vh - 60px);
     overflow-y: scroll;
-    overflow-x: hidden;
 }
 
 .wrapper main .main {
@@ -439,7 +438,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 25px;
-    overflow-x: auto;
+    /* overflow-x: auto; */
 }
 
 .wrapper main .main .main__block .main__content .main__btn {
@@ -603,24 +602,41 @@ header {
     font-weight: bold;
 }
 
-.modal__body__content {
+.car__detail__content{
     display: flex;
-    flex-direction: column;
-    gap: 25px;
+    gap: 15px;
     padding-bottom: 10px;
+}
+.slides{
+    width: 55%;
+    height: 100vh;
+    text-align: center;
+    position: fixed;
+}
+
+.carrousel-inner{
+    width: 100%;
+}
+.carrousel-item{
+    width: 100%;
 }
 
 .slide__img {
     width: 100%;
     height: 455px;
-    background-color: var(--gray-color);
-    background-color: silver;
+    /* background-color: var(--gray-color);
+    background-color: silver; */
 }
 
 .slide__img img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: fill;
+}
+.technical__data{
+    width: 40%;
+    padding: 0 20px;
+    margin-left: 60%;
 }
 
 table {
@@ -642,9 +658,10 @@ tbody {
 thead th {
     text-align: left;
     padding: 10px 5px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     color: var(--white-color);
+   
 }
 
 tbody tr:nth-child(even) {
@@ -653,12 +670,12 @@ tbody tr:nth-child(even) {
 }
 
 tbody tr td {
-    padding: 5px;
+    padding: 10px 5px;
     /* font-size: 15px; */
 }
 
 tbody tr td:last-child {
-    gap: 5px;
+    padding:  5px;
 }
 
 .crud {
@@ -768,14 +785,74 @@ tbody tr td:last-child {
 }
 
 
-.btn__list a{
+.table__btn{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn__list, .table__btn a{
     cursor: pointer;
-    padding: 8px 20px;
+    padding: 5px 20px;
     background-color: var(--white-color);
-    border: none;
+    border: none !important;
+    white-space: nowrap;
     width: 100%;
     border-radius: 5px;
     color: var(--orange-color);
     font-weight: bold;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.active>.page-link, .page-link.active {
+    z-index: 3;
+    color: var(--white-color);
+    background-color: var(--orange-color) !important;
+    border-color: var(--orange-color) !important;
+}
+
+.customer{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap: 25px;
+}
+.customer__img{
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+}
+
+.customer__img img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 50%;
+}
+
+.customer__detail__list{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.customer__detail__list li {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 15px;
+}
+
+.customer__detail__list li strong {
+    color:var(--orange-color);
+    font-size: 15px;
+    
+}
+.customer__detail__list p {
+    color:var(--black-color);
+    margin-bottom: 0 !important;
+}
+
+.paginate{
+    display: flex;
+    justify-content: right
 }

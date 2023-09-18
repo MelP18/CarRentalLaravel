@@ -72,7 +72,7 @@
                     
                     <div class="field">
                         <label for="car_release_date">Release date</label>
-                        <input class="form-control" aria-label="default input example" type="date" name="car_release_date" value="{{old('car_release_date')}}">
+                        <input  class="form-control" aria-label="default input example" type="date" name="car_release_date" value="{{old('car_release_date')}}">
                     </div>
                     <div class="field">
                         <label for="expected_return_date">Return date</label>
