@@ -1,33 +1,35 @@
 @charset "UTF-8";
 
 @font-face {
-    font-family:'Montserrat-Regular' ;
+    font-family: 'Montserrat-Regular';
     src: url(../fonts/Montserrat-Regular.ttf) format(truetype);
 }
+
 @font-face {
-    font-family:'Montserrat-Medium' ;
+    font-family: 'Montserrat-Medium';
     src: url(../fonts/Montserrat-Medium.ttf) format(truetype);
 }
+
 @font-face {
-    font-family:'Montserrat-Italic' ;
+    font-family: 'Montserrat-Italic';
     src: url(../fonts/Montserrat-Italic.ttf) format(truetype);
 }
 
-:root{
+:root {
     --white-color: #f1f1f1;
     --black-color: #000;
-    --orange-color: #ff690f ;
-    --orange-hover:#c94f02;
+    --orange-color: #ff690f;
+    --orange-hover: #c94f02;
     --gray-base: #f0f3f5;
-    --gray-color:#6a6b6b;
-    --gray-hover:#cfd2d4;
+    --gray-color: #6a6b6b;
+    --gray-hover: #cfd2d4;
     --regular-family: 'Montserrat-Regular';
     --medium-family: 'Montserrat-Medium';
     --italic-family: 'Montserrat-Italic';
 
 }
 
-*{
+* {
     position: relative;
     padding: 0;
     margin: 0;
@@ -37,27 +39,29 @@
     font-family: var(--regular-family);
 }
 
-body{
+body {
     overflow-x: hidden;
 }
 
-a, a.active a:hover{
-    text-decoration: none !important;   
+a,
+a.active a:hover {
+    text-decoration: none !important;
 }
 
-ul li{
+ul li {
     list-style-type: none !important;
 }
 
-.container{
+.container {
     padding: 0 15px;
     margin: 0 auto;
     max-width: 1300px;
 }
 
-.block{
+.block {
     width: 100%;
     height: 100vh;
+    overflow-x: hidden;
     background-color: var(--black-color);
 }
 
@@ -67,7 +71,7 @@ ul li{
     height: 100vh;
 }
 
-.block__background img{
+.block__background img {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -76,7 +80,7 @@ ul li{
 }
 
 /*=================++>   PAGE INDEX  ++====================*/
-.block__foreground{
+.block__foreground {
     width: 100%;
     height: 100%;
     display: flex;
@@ -85,7 +89,8 @@ ul li{
     justify-content: center;
     align-items: center;
 }
-.description__gescar p{
+
+.description__gescar p {
     text-align: center;
     max-width: 500px;
     color: var(--white-color);
@@ -94,65 +99,69 @@ ul li{
 }
 
 
-.block__foreground__btn .btn__list{
+.block__foreground__btn .btn__list {
     display: flex;
-    gap:25px;
+    gap: 25px;
 }
 
-.block__foreground__btn .btn__list a:first-child{
+.block__foreground__btn .btn__list a:first-child {
     padding: 8px 20px;
     border-radius: 5px;
-    background-color:var(--orange-color);
-}
-.block__foreground__btn .btn__list a:first-child:hover{
-    background-color:var(--orange-hover);
+    background-color: var(--orange-color);
 }
 
-.block__foreground__btn .btn__list a{
+.block__foreground__btn .btn__list a:first-child:hover {
+    background-color: var(--orange-hover);
+}
+
+.block__foreground__btn .btn__list a {
     padding: 8px 20px;
     border-radius: 5px;
-    background-color:var(--gray-base);
+    background-color: var(--gray-base);
 }
-.block__foreground__btn .btn__list a:hover{
-    background-color:var(--gray-hover);
+
+.block__foreground__btn .btn__list a:hover {
+    background-color: var(--gray-hover);
 }
-.block__foreground__btn .btn__list .btn__list__item{
+
+.block__foreground__btn .btn__list .btn__list__item {
     display: flex;
     align-items: center;
-    gap:10px;
+    gap: 10px;
 }
 
-.block__foreground__btn .btn__list a:first-child i{
+.block__foreground__btn .btn__list a:first-child i {
     font-size: 15px;
     color: var(--white-color);
 }
-.block__foreground__btn .btn__list a:first-child h4{
-    
+
+.block__foreground__btn .btn__list a:first-child h4 {
+
     color: var(--white-color);
 }
 
-.block__foreground__btn .btn__list .btn__list__item i{
+.block__foreground__btn .btn__list .btn__list__item i {
     font-size: 15px;
-    color: var(--orange-color);  
+    color: var(--orange-color);
 }
 
-.block__foreground__btn .btn__list .btn__list__item h4{
-   font-size: 14px;
-   margin-bottom: 0 !important;
-   font-weight: bold;
+.block__foreground__btn .btn__list .btn__list__item h4 {
+    font-size: 14px;
+    margin-bottom: 0 !important;
+    font-weight: bold;
     color: var(--orange-color);
     /* color: var(--white-color); */
 }
 
 /*======================== ++> FILL FIELD <++===============*/
-.foreground__content{
+.foreground__content {
     display: flex;
     flex-direction: column;
-    
+
     gap: 25px;
 }
 
-.fill{
+.fill {
     width: 100%;
     height: calc(100vh - 154px);
     display: flex;
@@ -163,7 +172,7 @@ ul li{
 .fill form {
     display: flex;
     flex-direction: column;
-    gap: 25px ;
+    gap: 25px;
     padding: 25px;
     margin: 5px;
     border: 1px solid var(--white-color);
@@ -172,7 +181,7 @@ ul li{
     overflow-y: scroll;
 }
 
-.fill__connection{
+.fill__connection {
     width: 100%;
     height: calc(100vh - 154px);
     display: flex;
@@ -188,7 +197,7 @@ ul li{
     align-items: center;
 }
 
-.fill__modify__password{
+.fill__modify__password {
     width: 100%;
     height: calc(100vh - 154px);
     display: flex;
@@ -199,7 +208,7 @@ ul li{
 .fill__connection form {
     display: flex;
     flex-direction: column;
-    gap: 25px ;
+    gap: 25px;
     padding: 25px;
     margin: 5px;
     border: 1px solid var(--white-color);
@@ -211,7 +220,7 @@ ul li{
 .fill__verification form {
     display: flex;
     flex-direction: column;
-    gap: 25px ;
+    gap: 25px;
     padding: 25px;
     margin: 5px;
     border: 1px solid var(--white-color);
@@ -219,10 +228,11 @@ ul li{
     width: 40%;
     overflow-y: scroll;
 }
-.fill__modify__password form{
+
+.fill__modify__password form {
     display: flex;
     flex-direction: column;
-    gap: 25px ;
+    gap: 25px;
     padding: 25px;
     margin: 5px;
     border: 1px solid var(--white-color);
@@ -230,47 +240,48 @@ ul li{
     width: 40%;
     overflow-y: scroll;
 }
-form::-webkit-scrollbar{
-    width: 5px; 
+
+form::-webkit-scrollbar {
+    width: 5px;
 }
 
-form::-webkit-scrollbar-thumb{
+form::-webkit-scrollbar-thumb {
     border-radius: 15px;
     background-color: var(--orange-color);
 }
 
-.fill__form h2{
+.fill__form h2 {
     font-size: 17px;
     font-family: var(--medium-family);
     font-weight: bold;
     color: var(--white-color);
 }
 
-.fill__field__list{
+.fill__field__list {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 35px;
 }
 
-.fill__field__list__item{
+.fill__field__list__item {
     width: 100%;
     display: flex;
     gap: 25px;
 }
 
-.fill__field{
+.fill__field {
     width: 100%;
     display: flex;
 }
 
-.fill__field__list__item label{
+.fill__field__list__item label {
     white-space: nowrap;
     color: var(--orange-color);
     font-size: 16px;
 }
 
-.fill__field__list__item input{
+.fill__field__list__item input {
     width: 100%;
     background-color: transparent;
     border: none;
@@ -279,117 +290,125 @@ form::-webkit-scrollbar-thumb{
     color: var(--gray-base);
     border-bottom: 1px solid var(--white-color);
 }
-.queried{
+
+.queried {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.queried p{
+.queried p {
     text-align: right;
     color: var(--white-color);
     font-weight: bold;
     margin-bottom: 0 !important;
 }
 
-.queried a{
+.queried a {
     display: inline-block;
     text-align: right;
     color: var(--orange-color);
     font-weight: bold;
-    border-bottom: 1px solid var(--orange-color);;
+    border-bottom: 1px solid var(--orange-color);
+    ;
 }
-.queried p a{
+
+.queried p a {
     text-align: center;
     color: var(--orange-color);
     border-bottom: 1px solid var(--orange-color);
     font-weight: bold;
 }
 
-.btn__submit{
+.btn__submit {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.btn__submit button{
+.btn__submit button {
     cursor: pointer;
     padding: 8px 20px;
     background-color: var(--white-color);
     border: none;
     border-radius: 5px;
     color: var(--orange-color);
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 /*======================++++> HOME PAGE <++======================*/
-.wrapper{
+.wrapper {
     background-color: rgb(231, 228, 228);
+    overflow-x: hidden;
 }
-header{
+
+header {
     background-color: var(--gray-base);
     z-index: 10;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
-.header__content{
+
+.header__content {
     padding: 5px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.header__logo a{
+.header__logo a {
     display: inline-block;
     width: 130px;
     height: 50px;
 }
 
-.header__logo a img{
+.header__logo a img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.header__menus{
+.header__menus {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.header__menus ul{
+.header__menus ul {
     margin-bottom: 0 !important;
 }
-.header__menu__list{
+
+.header__menu__list {
     display: flex;
     align-items: center;
-    gap:25px
+    gap: 25px
 }
 
-.header__menu__list__item a{
+.header__menu__list__item a {
     color: var(--orange-color);
     font-weight: bold;
 }
 
-.header__menu__list__item a:hover{
+.header__menu__list__item a:hover {
     color: var(--orange-hover);
-   /*  font-family: var(--italic-family); */
-   padding-bottom: 2px;
+    /*  font-family: var(--italic-family); */
+    padding-bottom: 2px;
     border-bottom: 2px solid var(--orange-hover);
 }
 
-.wrapper main{
+.wrapper main {
     width: 100%;
     height: calc(100vh - 60px);
     overflow-y: scroll;
     overflow-x: hidden;
 }
 
-.wrapper main .main{
+.wrapper main .main {
     width: 100%;
     height: 100%;
 
 }
-.wrapper main .main .main__block{
+
+.wrapper main .main .main__block {
     width: 100%;
     height: 100%;
     display: flex;
@@ -398,28 +417,32 @@ header{
     gap: 25px;
 }
 
-.wrapper main .main .main__block .main__title h2{
-   font-size: 20px;
-   margin-bottom: 0 !important;
-   padding-bottom: 2px;
-   font-weight: bold;
-   color: var(--gray-color);
+.wrapper main .main .main__block .main__title h2 {
+    font-size: 16px;
+    margin-bottom: 0 !important;
+    padding-bottom: 2px;
+    font-weight: bold;
+    color: var(--gray-color);
 }
-.wrapper main .main .main__block .main__title hr{
+
+.wrapper main .main .main__block .main__title hr {
     margin: 0 !important;
     height: 2px;
     border: none;
     opacity: 1;
     background-color: var(--orange-color);
- }
-.wrapper main .main .main__block .main__content{
+}
+
+.wrapper main .main .main__block .main__content {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     gap: 25px;
+    overflow-x: auto;
 }
-.wrapper main .main .main__block .main__content .main__btn{
+
+.wrapper main .main .main__block .main__content .main__btn {
     width: 100%;
     display: flex;
     justify-content: right;
@@ -427,7 +450,7 @@ header{
     gap: 25px;
 }
 
-.wrapper main .main .main__block .main__content .main__btn .add a{
+.wrapper main .main .main__block .main__content .main__btn .add a {
     display: inline-block;
     background-color: var(--gray-base);
     color: var(--orange-color) !important;
@@ -439,7 +462,7 @@ header{
 }
 
 
-.wrapper main .main .main__block .main__content .main__information .car .car__list{
+.wrapper main .main .main__block .main__content .main__information .car .car__list {
     display: flex;
     gap: 25px;
     padding-left: 0 !important;
@@ -447,199 +470,212 @@ header{
 }
 
 .wrapper main .main .main__block .main__content .main__information .car 
-.car__list .car__list__item{
+.car__list .car__list__item {
     display: flex;
-    flex-wrap:wrap ;
+    flex-wrap: wrap;
     flex-direction: column;
     gap: 25px;
     width: 406.67px;
-    height: 350px;
+    height: 290px;
     background-color: var(--gray-base);
 }
+
 .wrapper main .main .main__block .main__content .main__information .car 
-.car__list .car__list__item .car__img{
+.car__list .car__list__item .car__img {
     position: absolute;
     width: 100%;
     height: 100%;
 }
+
 .wrapper main .main .main__block .main__content .main__information .car 
-.car__list .car__list__item .car__img img{
+.car__list .car__list__item .car__img img {
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: contain;
-    opacity: 0.4 ;
-} 
+    opacity: 0.4;
+}
 
 .wrapper main .main .main__block .main__content .main__information .car 
-.car__list .car__list__item .car__information{
-   padding: 15px;
-   height: 100%;
-   width: 100%;
+.car__list .car__list__item .car__information {
+    padding: 15px;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     gap: 5px;
     background: linear-gradient(0deg, var(--black-color) -90.53%,
-     rgba(255, 255, 255, 0) 100%);
-     
+    rgba(255, 255, 255, 0) 100%);
 }
+
 .wrapper main .main .main__block .main__content .main__information .car 
-.car__list .car__list__item .car__information .car__name h3{
+.car__list .car__list__item .car__information .car__name h3 {
     text-align: center;
-  /* font-family: var(--italic-family); */
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 0  !important;
- /*  color: var(--orange-color); */
-  padding-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0 !important;
+    padding-bottom: 5px;
 }
-.wrapper main .main .main__block .main__content .main__information .car .car__list 
-.car__list__item .car__information .car__name hr{
+
+.wrapper main .main .main__block .main__content .main__information .car 
+.car__list .car__list__item .car__information .car__name hr {
     margin: 0 !important;
     height: 2px;
     border: none;
     opacity: 1;
     background-color: var(--white-color);
 }
-.wrapper main .main .main__block .main__content .main__information .car .car__list 
-.car__list__item .car__information .car__princ__info{
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.wrapper main .main .main__block .main__content .main__information .car .car__list 
-.car__list__item .car__information .car__princ__info .car__info{
+
+.wrapper main .main .main__block .main__content .main__information .car 
+.car__list .car__list__item .car__information .car__princ__info {
     display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.wrapper main .main .main__block .main__content .main__information .car 
+.car__list .car__list__item .car__information .car__princ__info .car__info {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
 
 }
 
-.wrapper main .main .main__block .main__content .main__information .car .car__list 
-.car__list__item .car__information .car__princ__info .car__info h3{
-font-size: 13px;
-  font-weight: bold;
-  font-family: var(--italic-family);
-  margin-bottom: 0  !important;
-/*   color: var(--orange-color); */
-  line-height: 15px !important;
+.wrapper main .main .main__block .main__content .main__information .car .car__list .car__list__item .car__information .car__princ__info .car__info h3 {
+    font-size: 13px;
+    font-weight: bold;
+    font-family: var(--italic-family);
+    margin-bottom: 0 !important;
+    /*   color: var(--orange-color); */
+    line-height: 15px !important;
 }
-.wrapper main .main .main__block .main__content .main__information .car .car__list 
-.car__list__item .car__information .car__princ__info .car__info  p{
-font-family: var(--italic-family);
-  font-weight: bold;
-  margin-bottom: 0  !important;
-  color: var(--white-color);
-  line-height: 15px !important;
+
+.wrapper main .main .main__block .main__content .main__information .car .car__list .car__list__item .car__information .car__princ__info .car__info p {
+    font-family: var(--italic-family);
+    font-weight: bold;
+    margin-bottom: 0 !important;
+    color: var(--white-color);
+    line-height: 15px !important;
 }
-.wrapper main .main .main__block .main__content .main__information .car .car__list 
-.car__list__item .car__information .link {
+
+.wrapper main .main .main__block .main__content .main__information .car .car__list .car__list__item .car__information .link {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.wrapper main .main .main__block .main__content .main__information .car .car__list 
-.car__list__item .car__information .link a{
+
+.wrapper main .main .main__block .main__content .main__information .car .car__list .car__list__item .car__information .link a {
     padding: 5px 20px;
     background-color: var(--white-color);
     border-radius: 5px;
     color: var(--orange-color);
-    font-weight: bold; 
+    font-weight: bold;
 }
-.wrapper main .main .main__block .main__content .empty__page{
+
+.wrapper main .main .main__block .main__content .empty__page {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.wrapper main .main .main__block .main__content .empty__page h3{
+
+.wrapper main .main .main__block .main__content .empty__page h3 {
     color: var(--orange-color);
 }
 
 /*=====================+++> CAR DETAIL<+++=========================  */
-.carousel-caption h5{
+.carousel-caption h5 {
     color: var(--orange-color) !important;
     font-size: 18px;
     font-family: var(--regular-family);
     letter-spacing: 2px;
     font-weight: bold;
 }
-.carousel-caption p{
+
+.carousel-caption p {
     font-size: 15px;
     font-family: var(--regular-family);
-    color: var(--white-color) !important;
+    color: var(--black-color) !important;
     letter-spacing: 2px;
     font-weight: bold;
-    
 }
-.modal__body__content{
+
+.modal__body__content {
     display: flex;
     flex-direction: column;
     gap: 25px;
     padding-bottom: 10px;
 }
-.slide__img{
+
+.slide__img {
     width: 100%;
     height: 455px;
-    background-color:var(--gray-color);
+    background-color: var(--gray-color);
+    background-color: silver;
 }
 
-.slide__img img{
+.slide__img img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
-table{
+
+table {
     width: 100%;
     border-collapse: collapse;
     background-color: var(--gray-base);
     box-shadow: 0 0 2px;
 }
 
-thead{
-    background-color: var(--orange-color);
-    /* background-color: var(--gray-color); */
+thead {
+    width: 100%;
+    background-color: var(--gray-color);
+}
+
+tbody {
     width: 100%;
 }
 
-tbody{
-    width: 100%;
-}
-
-thead th{
+thead th {
     text-align: left;
     padding: 10px 5px;
-    color: white;
     font-size: 16px;
     font-weight: bold;
-}
-tbody tr:nth-child(even){
-    background-color: rgb(182, 179, 179);
-}
-tbody tr td{
-    padding:5px;
-    font-size: 15px;
-}
-tbody tr td:last-child{
-    gap: 5px; 
+    color: var(--white-color);
 }
 
-.crud{
+tbody tr:nth-child(even) {
+    background-color: silver;
+
+}
+
+tbody tr td {
+    padding: 5px;
+    /* font-size: 15px; */
+}
+
+tbody tr td:last-child {
+    gap: 5px;
+}
+
+.crud {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - ( 50px + 60px + 28px));
+    height: calc(100vh - (50px + 60px + 28px));
 }
-.crud form{
+
+.crud form {
     display: flex;
     flex-direction: column;
     gap: 15px;
     padding: 15px;
     margin: 5px;
     width: 35%;
-    box-shadow: 0 0 3px var(--orange-color);
+    box-shadow: 0 0 3px var(--gray-color);
     background-color: white;
 }
 
@@ -650,7 +686,7 @@ tbody tr td:last-child{
     gap: 10px;
 }
 
-.crud form h5{
+.crud form h5 {
     font-size: 15px;
     margin-bottom: 0 !important;
     padding-bottom: 2px;
@@ -658,7 +694,7 @@ tbody tr td:last-child{
     color: var(--gray-color);
 }
 
-.crud form .field input{
+.crud form .field input {
     width: 100%;
     border: 1px solid var(--orange-color);
     border-radius: 5px;
@@ -666,44 +702,54 @@ tbody tr td:last-child{
     padding: 5px 15px;
 }
 
-.crud form .field select{
+.crud form .field textarea {
     width: 100%;
     border: 1px solid var(--orange-color);
     border-radius: 5px;
     outline: none;
     padding: 5px 15px;
-   
-}
-.crud form .btn__form{
-   display: flex;
-   justify-content: right;
-   align-items: center;
 }
 
-.crud form .btn__form button{
+.crud form .field select {
+    width: 100%;
+    border: 1px solid var(--orange-color);
+    border-radius: 5px;
+    outline: none;
+    padding: 5px 15px;
+
+}
+
+.crud form .btn__form {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.crud form .btn__form button {
     cursor: pointer;
     padding: 8px 20px;
     background-color: var(--white-color);
     border: none;
     border-radius: 5px;
     color: var(--orange-color);
-    font-weight: bold; 
+    font-weight: bold;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .add form {
-    margin-top: -35px;
     margin-bottom: 35px;
- }
+    box-shadow: 0 0 3px var(--gray-color);
+    padding: 10px;
+}
 
-.add form .btn__form{
+.add form .btn__form {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 25px;
- }
+}
 
-.add form .btn__form button{
+.add form .btn__form button {
     cursor: pointer;
     padding: 8px 20px;
     background-color: var(--white-color);
@@ -711,7 +757,25 @@ tbody tr td:last-child{
     width: 100%;
     border-radius: 5px;
     color: var(--orange-color);
-    font-weight: bold; 
+    font-weight: bold;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
+.btn__list {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+
+.btn__list a{
+    cursor: pointer;
+    padding: 8px 20px;
+    background-color: var(--white-color);
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    color: var(--orange-color);
+    font-weight: bold;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}

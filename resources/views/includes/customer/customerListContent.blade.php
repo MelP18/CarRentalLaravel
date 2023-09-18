@@ -70,17 +70,25 @@
                                     Supprimer
                                 </a></button>
 
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                                <a class="" href="">Modifier</a>
+                                            </button>
+
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                                <a class="" href="">
+                                                    Supprimer
+                                                </a></button>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                
+                </table>
+                        <div class="paginate d-flex justify-content-end m-5">
+                            {{ $table->links() }}
                         </div>
-                    </div>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-   
-</table>
-        <div class="paginate d-flex justify-content-end m-5">
-            {{ $table->links() }}
-        </div>
-    @endif
+
 
 </div>

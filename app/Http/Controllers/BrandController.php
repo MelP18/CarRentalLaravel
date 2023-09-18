@@ -19,13 +19,21 @@ class BrandController extends Controller
             'category_id' => "required"
         ]);
 
-        //dd($request->category_id);
+        $brands = Brand::where([
+            ['name',$request->name],
+            ['category_id',$request->category_id]
+        ])->first();
+
+        if($brands){
+            return redirect()->back()->with('error', "Brand already exist");
+        }
+
         $save = Brand::create([
             'name'=> $request->name,
             'category_id' =>$request->category_id
         ]);
         
-        return redirect()->back()->with('message', "Marque ajoutée avec succès");
+        return redirect()->back()->with('message', "Brand added successfully");
     }
 
     public function modifybrandcar(){
@@ -47,7 +55,7 @@ class BrandController extends Controller
             'category_id' =>$request->category_id
         ]);
 
-        return redirect()->route('showCarLists')->with('message', 'Marque modifiée avec sucèss');
+        return redirect()->route('showCarLists')->with('message', 'Brand modified successfully');
     }
 
     public function deletebrandcar(){
@@ -62,6 +70,6 @@ class BrandController extends Controller
 
         $save = Brand::where('id', $request->brand_id)->delete();
 
-        return redirect()->route('showCarLists')->with('message', 'Marque supprimée avec sucèss');
+        return redirect()->route('showCarLists')->with('message', 'Brand deleted successfully');
     }
 }

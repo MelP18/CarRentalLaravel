@@ -1,3 +1,4 @@
+
 @if (@isset($ids))
     <form  class="container mt-5" style="width: 45%" action="{{ route('customerUpdate', ['ids' => $ids]) }}" method="POST" enctype="multipart/form-data">
         @csrf
