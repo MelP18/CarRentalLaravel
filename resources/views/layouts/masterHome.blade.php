@@ -8,6 +8,7 @@
     <title>CarRental</title>
 </head>
 
+
 <body class="bg-blue-950">
 
     <div class="wrapper">

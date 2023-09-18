@@ -34,7 +34,7 @@
                     <td>{{ $item->expected_return_date }}</td>
                     <td>{{ $item->effective_return_date }}</td>
                     <td>{{ $item->observations }}</td>
-                    <td>{{ $item->status }}</td> <!-- Placez la colonne "Status" ici -->
+                    <td class="badge " @if ($item->status === 'Délai respecté') style="color: white; background-color: green; font-weight: 900" @elseif ($item->status === 'Délai non respecté') style="color: white; background-color: red; font-weight: 900" @else style="color: white; background-color: orange; font-weight: 900" @endif>{{ $item[ 'status'] }}</td> <!-- Placez la colonne "Status" ici -->
 
                     <td>
                         <div class=" btn-group">
@@ -51,4 +51,28 @@
 <div class="paginate d-flex justify-content-end m-5">
 
 </div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmation</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 @endif

@@ -9,7 +9,6 @@ use App\Models\Rental;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-
 class RentalController extends Controller
 {
     public function addRentals(){
@@ -44,15 +43,15 @@ class RentalController extends Controller
         return view('carView.showCar', compact('car', 'carModal', 'rental'));
     }
 
-    public function storeRental(Request $request){
+    public function storeRental(Request  $request){
         $data = $request->all();
         //dd($data);
        
         $request->validate([
             'customer_id' => 'required',
             'car_id' => 'required',
-            'car_release_date' => 'required',
-            'expected_return_date' => 'required|date',
+            'car_release_date' => 'required|date|after_or_equal:today',
+            'expected_return_date' => 'required|date|after_or_equal:today',
             'effective_return_date' => 'nullable',
             'observations' => 'nullable',
 
