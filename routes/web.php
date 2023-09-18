@@ -33,6 +33,7 @@ Route::get('/', function () {
 
 
 
+
 Route::controller(CategoryController::class)->prefix('car')->group(function(){
     Route::get('/add-category-car', 'addcategorycar')->name('addCategoryCar');
     Route::post('/send-category-car', 'sendcategorycar')->name('sendCategoryCar');
@@ -64,6 +65,7 @@ Route::controller(ModalController::class)->prefix('model')->group(function(){
 
 
 Route::controller(CarController::class)->prefix('car')->group(function(){
+
     Route::get('/car-lists', 'showcarlists')->name('showCarLists');
     Route::get('/add-car', 'addcar')->name('addCar');
     Route::post('/send-car-add', 'sendcaradd')->name('sendCarAdd');
@@ -71,12 +73,15 @@ Route::controller(CarController::class)->prefix('car')->group(function(){
     Route::get('/car-charateristics', 'carcharateristicslist')->name('CarCharacteristicsList');
 });
 
-Route::controller(CustomerController::class)->middleware('auth')->group(function(){
+Route::controller(CustomerController::class)->middleware('auth')->prefix('customer')->group(function(){
     Route::get('/customer-lists', 'showcustomerlists')->name('showCustomerLists');
     Route::get('/add-Customer', 'addCustomer')->name('addCustomer');
     Route ::post ('/store-customer',"storecustomer")->name("storecustomer");
+    Route::get('/update-Customer/{ids}', 'getcustomer')->name('getCustomer');
+    Route::post('/customer-update/{ids}',"customerupdate")->name('customerUpdate');
+    Route:: get('/custumer-profil/{id}',"showcustumer")->name("customerProfil");
+    Route::get('customer-delete/{id}', "deletecustomer")->name('deleteCustomer');
 });
-
 
 Route::controller(UserController::class)->prefix('authentification')->group(function(){
     Route::get('/registration', 'signup')->name('signUp');
