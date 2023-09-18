@@ -16,16 +16,12 @@ class CarController extends Controller
 {
     public function showCarLists(){
         $cars = Car::paginate(3);
-
-        //dd($cars);
-        //$categorie = $cars[0]->modalContent->brandContent->categoryContent->name;
-        //dd($categorie);
         $carList = [];
         foreach($cars as $car){
             $modalCar = $car->modalContent;
             $carList[] = $modalCar;
         }
-        //dd(count($carList));
+        //dd($carList);
         return view('carView.carList', compact('carList', 'cars'));
     }
 

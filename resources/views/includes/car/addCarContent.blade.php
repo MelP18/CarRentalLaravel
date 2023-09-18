@@ -123,7 +123,7 @@
            
             @if($modals->count() != 0)
                
-                <div class="btn__list">
+                <div class="table__btn">
                     <div class="add">
                         <a href="{{ route('showCarLists') }}">Car list</a>
                     </div>

@@ -135,7 +135,9 @@
                                 </li> 
                                 @endforeach
                             </ul>
-                            {{ $cars->links() }}
+                            <div class="paginate">
+                                {{ $cars->links() }}
+                            </div>
                         </div>
                     </div>    
                 @else
