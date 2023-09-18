@@ -8,7 +8,7 @@
         <form method="POST" action="{{ route('sendSignUp') }}">
             @csrf
             <div class="fill__form">
-                <h2>INSCRIPTION</h2>
+                <h2>REGISTRATION</h2>
             </div>
            
             @if (session('message'))
@@ -73,7 +73,7 @@
                 </div>  
             </div>
             <div class="queried">
-                <p>Déjà inscrit? <a href="{{ route('logIn') }}">Se connecter</a></p>
+                <p>Already registered? <a href="{{ route('logIn') }}">Sign in</a></p>
             </div>
             <div class="btn__submit">
                 <button>Sign up</button>

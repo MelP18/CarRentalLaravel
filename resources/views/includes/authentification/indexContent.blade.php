@@ -5,9 +5,7 @@
         </div>
         <div class="description__gescar">
           
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas suscipit atque harum consequuntur hic iure
-                ducimus sint sunt. Itaque qui non corporis deleniti consectetur commodi illo sequi accusantium
-                asperiores harum?</p>
+            <p>GNANSOUNOU Prisca <br> RAHIMY TITUS Samson <br> SAÏDOU Mouhamed Bouhari</p>
         </div>
         <div class="block__foreground__btn">
             <div class="btn__list">
@@ -18,7 +16,7 @@
         
                 <a class="btn__list__item" href="{{ route('logIn') }}">
                     <i class="fa-solid fa-right-to-bracket"></i>
-                    <h4>Log in</h4>
+                    <h4>Sign in</h4>
                 </a>
             </div>
         </div>

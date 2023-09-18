@@ -56,12 +56,12 @@ class UserController extends Controller
         );
 
 
-        Mail::send('authentificationView.SignUpMail',['url'=> $url],function($message ) use ($data){
+        Mail::send('authentificationView.SignUpMail',['url'=> $url, 'name'=>$data['surname'] .' '. $data['firstname']],function($message ) use ($data){
             $config = config('mail');
-            $name = $data['surname'].' '.$data ['firstname'];
+            //$name = $data['surname'].' '.$data ['firstname'];
             $message-> subject('Registration!')
                     ->from($config ['from']['address'], $config['from']['name'])//on va yrevenir
-                    ->to($data['email'], $name);
+                    ->to($data['email'] ,$data['surname'], $data['firstname']);
         });
 
         return redirect()->back()->with('message',' Email envoyé! Veuillez confirmer pour activer votre compte !');
@@ -156,11 +156,11 @@ class UserController extends Controller
             );
 
             
-            Mail::send('modifyPasswordView.changePasswordMail',['url'=> $url],function($message ) use ($data){
+            Mail::send('modifyPasswordView.changePasswordMail',['url'=> $url, 'name'=>$data['surname'] .' '. $data['firstname']],function($message ) use ($data){
                 $config = config('mail');
                 $message-> subject('Modification du Mot de Passe !')
                         ->from($config ['from']['address'], $config['from']['name'])//on va yrevenir
-                        ->to($data['email'] );
+                        ->to($data['email'],$data['surname'], $data['firstname'] );
     
             });
             return redirect()->back()->with('message', 'E-mail envoyé! Veuillez valider la modification de votre Mot de passe par E-mail');

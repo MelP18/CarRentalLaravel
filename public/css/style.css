@@ -661,6 +661,7 @@ thead th {
     font-size: 14px;
     font-weight: bold;
     color: var(--white-color);
+    white-space: nowrap;
    
 }
 
@@ -794,7 +795,7 @@ tbody tr td:last-child {
 .btn__list, .table__btn a{
     cursor: pointer;
     padding: 5px 20px;
-    background-color: var(--white-color);
+    /*background-color: var(--white-color);*/
     border: none !important;
     white-space: nowrap;
     width: 100%;
@@ -856,3 +857,16 @@ tbody tr td:last-child {
     display: flex;
     justify-content: right
 }
+
+.badges p {
+    margin-bottom: 0 !important;
+    white-space: nowrap;
+}
+
+.badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    border-radius: 5px;
+   }

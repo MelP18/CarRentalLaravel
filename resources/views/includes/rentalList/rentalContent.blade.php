@@ -61,10 +61,11 @@
                             <th>Expected Return date</th>
                            {{--  <th>Effective Return date</th> --}}
                            
-                            <th>Status</th>
+                            
                            
                             <th>Effective Return date</th>
                             <th>Observations</th>
+                            <th>Status</th>
                             <th>Technical data</th>
                             <th>Action</th>
                         </tr>
@@ -79,10 +80,13 @@
                                     <td>{{ $item->expected_return_date }}</td>
                                    
                                     
-                                    <td class="badge " @if ($item->status === 'Délai respecté') style="color: white; background-color: green; font-weight: 900" @elseif ($item->status === 'Délai non respecté') style="color: white; background-color: red; font-weight: 900" @else style="color: white; background-color: orange; font-weight: 900" @endif>{{ $item[ 'status'] }}</td>>{{ $item->status }}</td> <!-- Placez la colonne "Status" ici -->
+                                    
                                     
                                     <td>{{ $item->effective_return_date }}</td>
                                     <td>{{ $item->observations }}</td>
+                                    <td class="badges" @if ($item->status === 'Délai respecté') style="color: white; background-color: green; font-weight: 900; display:flex; justify-content:center; align-items:center" @elseif ($item->status === 'Délai non respecté') style="color: white; background-color: red; font-weight: 900" @else style="color: white; background-color: orange; font-weight: 900" @endif>
+                                        <p>{{ $item->status }}</p>
+                                    </td> <!-- Placez la colonne "Status" ici -->
                                     <td>
                                         <div class="table__btn">
                                             <div class="add">

@@ -8,7 +8,7 @@
         <form method="POST" action="{{route('sendLogIn')}}">
             @csrf
             <div class="fill__form">
-                <h2>CONNEXION</h2>
+                <h2>CONNECTION</h2>
             </div>
 
            
@@ -60,11 +60,11 @@
                 </div>
             </div>
             <div class="queried">
-                <p>Pas encore inscrit? <a href="{{route('signUp')}}">S'inscrire</a></p>
-                <p><a href="{{route('verifyEmail')}}">Mot de Passe oublié?</a><p>
+                <p>Not registered yet? <a href="{{route('signUp')}}">Sign up</a></p>
+                <p><a href="{{route('verifyEmail')}}">Forgot Password?</a><p>
             </div>
             <div class="btn__submit">
-                <button>Login</button>
+                <button>Sign in</button>
             </div>
         </form>
     </div>

@@ -55,7 +55,7 @@
             </div>
             
             <div class="btn__submit">
-                <button>Envoyez</button>
+                <button>Send</button>
             </div>
             
         </form>
