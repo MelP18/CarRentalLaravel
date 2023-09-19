@@ -2,7 +2,7 @@
     <div class="main">
         <div class="main__block">
             <div class="main__title">
-                <h2>ADD BRAND</h2>
+                <h2>ADD MODAL</h2>
                 <hr>
             </div>
             @if (session('message'))
@@ -44,7 +44,7 @@
                 <form method="POST" action="{{route('sendModalCar')}}">
                     @csrf
                     <div>
-                        <h5>MODEL</h5>
+                        <h5>MODAL</h5>
                     </div>
                     <div class="field"> 
                         <label for="name">Name</label>
@@ -57,7 +57,7 @@
                     <div class="field"> 
     
                         <select class="form-select" aria-label="Default select example"  name="brand_id">
-                           <option value="">Select a model</option>
+                           <option value="">Select a brand</option>
                            @foreach ($brands as $brand)
                                 <option value="{{ $brand->id }}">
                                     {{ $brand->name }}

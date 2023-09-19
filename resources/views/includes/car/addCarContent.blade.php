@@ -70,7 +70,7 @@
                         </div>
                         <div class="field"> 
                             <select class="form-select" aria-label="Default select example" name="category_id">
-                            <option value="">Select a brand</option>
+                            <option value="">Select a category</option>
                                 @foreach ($categories as $category)
                                     <option value="{{ $category->id }}">
                                         {{ $category->name }}
@@ -104,7 +104,7 @@
                         <div class="field"> 
 
                             <select class="form-select" aria-label="Default select example"  name="brand_id">
-                            <option value="">Select a model</option>
+                            <option value="">Select a brand</option>
                             @foreach ($brands as $brand)
                                     <option value="{{ $brand->id }}">
                                         {{ $brand->name }}

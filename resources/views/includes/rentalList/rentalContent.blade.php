@@ -10,11 +10,6 @@
                     <div class="add">
                         <a href="{{ route('addRentals') }}">Ajouter une location</a>
                     </div>
-                    <div class="add">
-                        <a href="{{ route('addCustomer') }}" >
-                            Add Customer
-                        </a>
-                    </div>
                 </div>
                 @if (session('message'))
 

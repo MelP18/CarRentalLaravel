@@ -50,7 +50,7 @@
                     </div>
                     <div class="field"> 
                         <select class="form-select" aria-label="Default select example" name="category_id">
-                           <option value="">Select a brand</option>
+                           <option value="">Select a category</option>
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}">
                                     {{ $category->name }}
