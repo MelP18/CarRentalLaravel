@@ -10,7 +10,7 @@ class Brand extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function modalContent(){
+    public function modalAllContent(){
         return $this->hasmany(Modal::class);
     }
 
