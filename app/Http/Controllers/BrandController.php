@@ -50,6 +50,15 @@ class BrandController extends Controller
             'category_id' => 'required'
         ]);
 
+        $brands = Brand::where([
+            ['name',$request->name],
+            ['category_id',$request->category_id]
+        ])->first();
+
+        if($brands){
+            return redirect()->back()->with('error', "Brand already exist");
+        }
+
         $save = Brand::where('id', $request->brand_id)->update([
             'name' => $request->name,
             'category_id' =>$request->category_id

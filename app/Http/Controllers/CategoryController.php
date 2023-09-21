@@ -45,6 +45,11 @@ class CategoryController extends Controller
             'name' => 'required'
         ]);
 
+        $category = Category::where('name',$request->name)->first();
+        if($category){
+            return redirect()->back()->with('error', "Category already exist");
+        }
+        
         $save = Category::where('id',$request->category_id)->update([
             'name' => $request->name
         ]);

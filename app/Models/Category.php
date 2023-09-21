@@ -10,7 +10,7 @@ class Category extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function brandContent(){
+    public function brandAllContent(){
         return $this->hasMany(Brand::class);
     }
     

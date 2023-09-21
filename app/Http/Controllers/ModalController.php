@@ -65,13 +65,17 @@ class ModalController extends Controller
             ['brand_id', $request->brand_id]
         ])->first();
 
-        if(!$modal){
-            $save = Modal::where('id', $request->modal_id)->update([
-                'model_name'=> $request->model_name,
-                'year' => $request->year,
-                'brand_id'  =>$request->brand_id
-            ]);
+        
+        if($modal){
+            return redirect()->back()->with('error', "Model already exist");
         }
+        
+        $save = Modal::where('id', $request->modal_id)->update([
+            'model_name'=> $request->model_name,
+            'year' => $request->year,
+            'brand_id'  =>$request->brand_id
+        ]);
+        
 
         return redirect()->route('showCarLists')->with('message', 'Model modify with successful!');
     }

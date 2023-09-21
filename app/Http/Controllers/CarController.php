@@ -72,6 +72,8 @@ class CarController extends Controller
         };
 
         //dd($picture);
+
+       
         $save = Car::create([
             'mainly_image' => $mainly_picture,
             'secondary_image' =>  $secondary_picture,
