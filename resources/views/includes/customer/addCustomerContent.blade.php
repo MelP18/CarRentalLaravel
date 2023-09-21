@@ -88,7 +88,7 @@
                         <div class="mb-3">
                             <label for="">CNI</label>
                             <input value="{{ $item->cni }}" type="text" name="cni" class="form-control p-2" id="floatingPassword"
-                                placeholder="Adresse">
+                                placeholder="CNI">
                         </div>
                     </div>
                     <div class="btn__form">

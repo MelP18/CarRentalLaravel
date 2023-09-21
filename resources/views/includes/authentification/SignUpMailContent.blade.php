@@ -5,7 +5,7 @@
     <div class="logo">
         <img src="{{ asset('car_pictures/logo.png') }}" alt="LOGO">
     </div>
-    <div class="description__gescar" style="display: flex; flex-dire justify-content:center; align-items:center; gap: 15px;">
+    <div class="description__gescar" style="display: flex; flex-direction:column; justify-content:center; align-items:center; gap: 15px;">
       
         <p style="text-align: center">Bienvenue {{ $name }}</p>
         <p  style="text-align: center">Pour activer votre compte sur Gescar, veuillez <a href="{{$url}}">cliquer ici</a></p>

@@ -64,7 +64,7 @@ Route::controller(ModalController::class)->prefix('model')->group(function(){
 });
 
 
-Route::controller(CarController::class)->prefix('car')->group(function(){
+Route::controller(CarController::class)->middleware('auth')->prefix('car')->group(function(){
 
     Route::get('/car-lists', 'showcarlists')->name('showCarLists');
     Route::get('/add-car', 'addcar')->name('addCar');
@@ -97,7 +97,7 @@ Route::controller(UserController::class)->prefix('authentification')->group(func
 });
 
 
-Route::controller(RentalController::class)->prefix('rental')->group(function(){
+Route::controller(RentalController::class)->middleware('auth')->prefix('rental')->group(function(){
    Route::get('/rental', 'rental')->name('rental'); 
    Route::get('/add-rentals', 'addRentals')->name('addRentals');
    Route::get('/show-car/{id}', 'show')->name('show');
