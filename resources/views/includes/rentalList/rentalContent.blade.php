@@ -8,8 +8,12 @@
             <div class="main__content">
                 <div class="main__btn">
                     <div class="add">
-                        <a href="{{ route('addRentals') }}">Ajouter une location</a>
+                        <a href="{{ route('addRentals') }}">Add Rental</a>
                     </div>
+                    <div class="add">
+                        <a href="{{ route('printRental') }}">Print Rentals</a>
+                    </div>
+                    
                 </div>
                 @if (session('message'))
 

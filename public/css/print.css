@@ -1,0 +1,57 @@
+* {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+    max-width: 1300px;
+}
+.title h4{
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-decoration: double;
+    margin: 25px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgb(157, 160, 170);
+}
+
+thead {
+    width: 100%;
+}
+
+tbody {
+    width: 100%;
+}
+
+thead{
+    background-color: silver;
+}
+
+thead th{
+    text-align: left;
+    padding: 8px 5px;
+    background-color: rgb(4, 43, 31);
+    color: white;
+}
+
+tbody tr:nth-child(even){
+    background-color: #eeeeee73;
+}
+
+tbody tr td{
+    text-align: left;
+    padding: 8px;
+}
+.empty__page h3 {
+    text-align: center;
+    padding: 15px;
+}
