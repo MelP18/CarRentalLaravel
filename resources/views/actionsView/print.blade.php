@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    @include('includes.actions.print')
+    @include('includes.actions.printContent')
     
 </body>
 </html>

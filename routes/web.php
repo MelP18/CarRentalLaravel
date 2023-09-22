@@ -103,5 +103,7 @@ Route::controller(RentalController::class)->prefix('rental')->group(function(){
    Route::get('/show-car/{id}', 'show')->name('show');
    Route ::post ('/store-rental',"storeRental")->name("storeRental");
    Route::get('/print/rental', 'printrental')->name('printRental');
-
+   Route::get('/search/rental', 'searchrental')->name('searchRental');
+   Route::post('send/search/rental', 'sendsearchrental')->name('sendSearchRental');
+   
 });
