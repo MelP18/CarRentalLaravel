@@ -10,6 +10,9 @@ use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Barryvdh\DomPDF\Facade\Pdf;
+
+use function Ramsey\Uuid\v1;
+
 class RentalController extends Controller
 {
     public function addRentals(){
@@ -116,11 +119,36 @@ class RentalController extends Controller
         return redirect()->route('rental')->with("message", "Location mis à jour avec succès");
     }
 
+
+    public function searchrental() {
+        return view('actionsView.search');
+    }
+
+    public function sendsearchrental(Request $request) {
+        $request->validate([
+            'date1' => 'required|before_or_equal:'.Carbon::now()->format('Y-m-d'),
+            'date2' => 'required|after_or_equal:'.$request->date1,
+        ]);
+
+        $date1 = $request->date1;
+        $date2 = $request->date2;
+
+        $rentals = Rental::whereBetween('rentals.car_release_date',[$request->date1, $request->date2])->get();
+        
+        if($rentals->count() == 0){
+            return redirect()->route('searchRental')->with('error', 'No data available');   
+        }
+        
+        return view('actionsView.search',compact('rentals','date1','date2'))->with('message', 'Data available');
+        
+    }
+
     public function printrental(){
         $rentalList = Rental::all();
-        $pdf = Pdf::loadView('actionsView.print', ['rentals'=>$rentalList]);
-       /*  $pdfs = setPaper("A5", "landscape"); */
-        return $pdf->stream('rental_List.pdf');
+        $pdf = Pdf::loadView('actionsView.print', ['rentals'=>$rentalList])
+        ->setPaper('A4','landscape');
+        return $pdf->stream('rental_List.pdf')
+        /* ->download('rental_List.pdf') */;
     }
 
 }

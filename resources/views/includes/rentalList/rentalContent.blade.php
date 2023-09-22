@@ -11,9 +11,11 @@
                         <a href="{{ route('addRentals') }}">Add Rental</a>
                     </div>
                     <div class="add">
-                        <a href="{{ route('printRental') }}">Print Rentals</a>
+                        <a href="{{route('searchRental')}}">
+                            Search Rental
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
                     </div>
-                    
                 </div>
                 @if (session('message'))
 

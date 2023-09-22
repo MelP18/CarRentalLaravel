@@ -573,7 +573,7 @@ header {
     font-weight: bold;
 }
 
-.wrapper main .main .main__block .main__content .empty__page {
+/* .wrapper main .main .main__block .main__content  */.empty__page {
     width: 100%;
     height: 100%;
     display: flex;
@@ -581,7 +581,7 @@ header {
     align-items: center;
 }
 
-.wrapper main .main .main__block .main__content .empty__page h3 {
+/* .wrapper main .main .main__block .main__content  */.empty__page h3 {
     color: var(--orange-color);
 }
 
