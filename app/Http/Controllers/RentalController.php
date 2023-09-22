@@ -9,6 +9,7 @@ use App\Models\Rental;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Barryvdh\DomPDF\Facade\Pdf;
 class RentalController extends Controller
 {
     public function addRentals(){
@@ -109,10 +110,17 @@ class RentalController extends Controller
     
         $rental->effective_return_date = $effectiveReturnDate;
         $rental->status = $status;
-        $rental ->observations = $data['observations'];        
+        $rental->observations = $data['observations'];        
         $rental->save();
 
-        
-        return redirect()->route('rental')->with ("message", "Location mis à jour avec succès");
+        return redirect()->route('rental')->with("message", "Location mis à jour avec succès");
     }
+
+    public function printrental(){
+        $rentalList = Rental::all();
+        $pdf = Pdf::loadView('actionsView.print', ['rentals'=>$rentalList]);
+       /*  $pdfs = setPaper("A5", "landscape"); */
+        return $pdf->stream('rental_List.pdf');
+    }
+
 }
